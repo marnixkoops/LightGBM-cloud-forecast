@@ -28,7 +28,7 @@ if __name__ == '__main__':
     LOGGER.info('Starting process to generate features')
     try:
         LOGGER.info('Attempting to download existing features file in GCS for current runtag: {}'.format(RUNTAG))
-        file_location = download_file_from_gcs(PROJECT, BUCKET, '{}/features_{}.h5'.format(DATA_DIR, RUNTAG))
+        file_location = download_file_from_gcs(PROJECT, BUCKET, '{}/features_{}.h5'.format(DATA_DIR, 'LGBM_TEST'))
         features_df = pd.read_hdf(file_location, 'features_df')
         subprocess.call(['rm', '-f', file_location])
     except IOError:
@@ -36,7 +36,7 @@ if __name__ == '__main__':
                     'so features will be generated from scratch'.format(RUNTAG))
         LOGGER.info('Downloading data (actuals) hdf file')
         file_location = download_file_from_gcs(PROJECT, BUCKET,
-                                               '{}/actual_{}.h5'.format(DATA_DIR, 'ALL_PRODUCTS_LESS_FEATURES'))
+                                               '{}/actual_{}.h5'.format(DATA_DIR, 'LGBM_TEST'))
         LOGGER.info('Reading data (actuals) in pandas dataframe')
         data_df = pd.read_hdf(file_location, 'data_df')
         LOGGER.info('Starting feature generation')
@@ -45,8 +45,8 @@ if __name__ == '__main__':
         del data_df
         gc.collect()
 
-    # LOGGER.info('Writing features dataframe as local hdf file')
-    # features_df.to_hdf('./features_{}.h5'.format(RUNTAG), 'features_df', index=False)
+    LOGGER.info('Writing features dataframe as local hdf file')
+    features_df.to_hdf('./features_{}.h5'.format(RUNTAG), 'features_df', index=False)
 
     LOGGER.info('Starting process to train and predict in a single step')
     train_model(features_df, LOGGER)

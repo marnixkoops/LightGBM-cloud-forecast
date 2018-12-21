@@ -17,6 +17,10 @@ from custom_code.settings import PROJECT, BUCKET, DATA_DIR, MODEL_DIR, RESULTS_D
 
 def train_model(features_df, LOGGER):
     LOGGER.info('Setting up LightGBM ...')
+
+    # Randomly sample fraction of rows for fast debugging
+    features_df = features_df.sample(frac=0.05)
+
     target = features_df['actual'].copy()
 
     if not COMPUTE_SHAP:
@@ -27,6 +31,8 @@ def train_model(features_df, LOGGER):
     min_test_size = int(0.03 * features_df.shape[0])  # 2+ months of testing
     step_size = int(0.03 * features_df.shape[0])  # 2+ month step size between folds
     timefolds = timefold.timefold(method='step', min_train_size=min_train_size, min_test_size=min_test_size, step_size=step_size)
+    feature_importance_df = pd.DataFrame() # Initialize placeholder df for overall feature imps over folds
+
 
     for fold, (train_idx, test_idx) in enumerate(timefolds.split(features_df)):
         if fold == 0:
@@ -38,10 +44,14 @@ def train_model(features_df, LOGGER):
             LOGGER.info('Generating fold-aware aggregate features for fold {}'.format(fold))
             features_df_tmp = add_fold_aware_features_faster(features_df_tmp, train_idx)
             LOGGER.info('Finished generating fold-aware features for fold {}'.format(fold))
-            # Specify numeric and categorical features
-            features_names = [f for f in features_df_tmp.columns if f not in ['date', 'actual', 'on_stock']]
-            cat_features = ['product_id', 'product_type_id', 'brand_id', 'manufacturer_id', 'product_group_id', 'team_id', 'subproduct_type_id',
+
+            # Specify which numerical and categorical features to include
+            drop_features = ['date', 'actual', 'on_stock', 'product_id', 'quarter', 'team_id']
+            features_names = [f for f in features_df_tmp.columns if f not in drop_features]
+            cat_features = ['product_type_id', 'brand_id', 'manufacturer_id', 'product_group_id', 'subproduct_type_id',
                             'month', 'weekday', 'dayofmonth', 'weekofyear', 'year', 'dayofyear']
+            # cat_features = ['product_id', 'product_type_id', 'brand_id', 'manufacturer_id', 'product_group_id', 'team_id', 'subproduct_type_id',
+            #                 'month', 'weekday', 'dayofmonth', 'weekofyear', 'year', 'dayofyear']
 
             # Split dataframe into train and test set
             LOGGER.info('Start splitting dataframe')
@@ -107,20 +117,19 @@ def train_model(features_df, LOGGER):
 
             # Compute feature importances
             LOGGER.info('Start computing feature importances')
-            gain = booster.feature_importance(importance_type='gain')
-            split = booster.feature_importance(importance_type='split')
             fold_importance_df = pd.DataFrame()
             fold_importance_df['fold'] = np.repeat(fold, len(features_names))
             fold_importance_df['feature'] = features_names
-            fold_importance_df['gain'] = gain
-            fold_importance_df['split'] = split
+            fold_importance_df['gain'] = booster.feature_importance(importance_type='gain')
+            fold_importance_df['split'] = booster.feature_importance(importance_type='split')
+            feature_importance_df = pd.concat([feature_importance_df, fold_importance_df], axis=0) # Results over all folds
 
-            LOGGER.info('Write importances to local file')
-            fold_importance_df.to_csv('./importance_{}_{}.csv'.format(fold, RUNTAG), index=False)
-            LOGGER.info('Write importances to GS bucket')
-            upload_file_to_gcs(PROJECT, BUCKET, './importance_{}_{}.csv'.format(fold, RUNTAG),
-                               '{}/importance_{}_{}.csv'.format(RESULTS_DIR, fold, RUNTAG))
-            subprocess.call(['rm', '-f', './importance_{}_{}.csv'.format(fold, RUNTAG)])
+            # LOGGER.info('Write importances to local file')
+            # fold_importance_df.to_csv('./importance_{}_{}.csv'.format(fold, RUNTAG), index=False)
+            # LOGGER.info('Write importances to GS bucket')
+            # upload_file_to_gcs(PROJECT, BUCKET, './importance_{}_{}.csv'.format(fold, RUNTAG),
+            #                    '{}/importance_{}_{}.csv'.format(RESULTS_DIR, fold, RUNTAG))
+            # subprocess.call(['rm', '-f', './importance_{}_{}.csv'.format(fold, RUNTAG)])
 
             # Clean up memory
             del fold_importance_df
@@ -162,3 +171,11 @@ def train_model(features_df, LOGGER):
             gc.collect()
 
             LOGGER.info('Finished processing fold {}'.format(fold))
+
+    # Save overall feature importance
+    LOGGER.info('Write importances to local file')
+    fold_importance_df.to_csv('./importance_overall_{}.csv'.format(RUNTAG), index=False)
+    LOGGER.info('Write importances to GS bucket')
+    upload_file_to_gcs(PROJECT, BUCKET, './importance_overall_{}.csv'.format(RUNTAG),
+                       '{}/importance_overall_{}.csv'.format(RESULTS_DIR, fold, RUNTAG))
+    subprocess.call(['rm', '-f', './importance_overall_{}.csv'.format(RUNTAG)])

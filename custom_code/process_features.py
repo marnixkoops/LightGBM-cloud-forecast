@@ -8,6 +8,18 @@ from custom_code.download_file_from_gcs import download_file_from_gcs
 from custom_code.settings import LAGS, PROJECT, BUCKET, DATA_DIR, RUNTAG
 
 
+def downcast_datatypes(df):
+    float_cols = df.select_dtypes(include=['float'])
+    int_cols = df.select_dtypes(include=['int'])
+
+    for cols in float_cols.columns:
+        df[cols] = pd.to_numeric(df[cols], downcast='float')
+    for cols in int_cols.columns:
+        df[cols] = pd.to_numeric(df[cols], downcast='integer')
+
+    return df
+
+
 def add_seasonal_features(data_df):
     print('Generating seasonality features ...')
     data_df['year'] = data_df['date'].dt.year.astype('int16')
@@ -104,27 +116,24 @@ def add_lag_target_and_rolling_aggregate_features(data_df, lags, LOGGER):
         # Generate all rolling aggregates based on the lag target feature, otherwise we'd have leakage
         LOGGER.info('Creating lag-min feature')
         lag_target_df['{}_min'.format(column_name)] = \
-            grouped_lag_target_df[column_name].rolling(lag).min().fillna(0).astype('int16').reset_index(0, drop=True)
+            grouped_lag_target_df[column_name].rolling(lag).min().fillna(0).reset_index(0, drop=True)
         LOGGER.info('Creating lag-max feature')
         lag_target_df['{}_max'.format(column_name)] = \
-            grouped_lag_target_df[column_name].rolling(lag).max().fillna(0).astype('int16').reset_index(0, drop=True)
+            grouped_lag_target_df[column_name].rolling(lag).max().fillna(0).reset_index(0, drop=True)
         LOGGER.info('Creating lag-mean feature')
         lag_target_df['{}_mean'.format(column_name)] = \
-            grouped_lag_target_df[column_name].rolling(lag).mean().fillna(0).astype('float16').reset_index(0, drop=True)
+            grouped_lag_target_df[column_name].rolling(lag).mean().fillna(0).reset_index(0, drop=True)
         LOGGER.info('Creating lag-median feature')
         lag_target_df['{}_median'.format(column_name)] = \
-            grouped_lag_target_df[column_name].rolling(lag).median().fillna(0).astype('int16').reset_index(0, drop=True)
+            grouped_lag_target_df[column_name].rolling(lag).median().fillna(0).reset_index(0, drop=True)
         LOGGER.info('Creating lag-sum feature')
         lag_target_df['{}_sum'.format(column_name)] = \
-            grouped_lag_target_df[column_name].rolling(lag).sum().fillna(0).astype('int16').reset_index(0, drop=True)
+            grouped_lag_target_df[column_name].rolling(lag).sum().fillna(0).reset_index(0, drop=True)
         LOGGER.info('Creating lag-var feature')
         lag_target_df['{}_var'.format(column_name)] = \
-            grouped_lag_target_df[column_name].rolling(lag).var().fillna(0).astype('float16').reset_index(0, drop=True)
+            grouped_lag_target_df[column_name].rolling(lag).var().fillna(0).reset_index(0, drop=True)
 
-        int16_features = ['lag_{}'.format(lag), '{}_min'.format(column_name), '{}_max'.format(column_name), '{}_median'.format(column_name), '{}_sum'.format(column_name)]
-        float16_features = ['{}_mean'.format(column_name), '{}_var'.format(column_name)]
-        lag_target_df[int16_features] = lag_target_df[int16_features].apply(lambda col: col.astype('int16'))
-        lag_target_df[float16_features] = lag_target_df[float16_features].apply(lambda col: col.astype('float16'))
+        downcast_datatypes(lag_target_df)
 
     lag_target_df = lag_target_df.drop('actual', axis=1)
     # Remove all data for which we don't have accurate lag targets, namely the first max(lag) days per product
@@ -135,18 +144,19 @@ def add_lag_target_and_rolling_aggregate_features(data_df, lags, LOGGER):
     # With this fillna, we say that, for all out of stock days, lag target and its rolling aggregates is 0
     # If lag target gets a lot of effect, this should help with pushing down the prediction
     # We can change this (maybe the min?) depending on how it comes out
-    LOGGER.info('Filling missing data in columns in merged dataframe')
-    data_df = data_df.fillna(0)
 
-    LOGGER.info('Setting datatypes in merged dataframe')
-    for lag in lags:
-        column_name = 'lag_{}'.format(lag)
-        int16_features = [column_name, '{}_min'.format(column_name), '{}_max'.format(column_name), '{}_median'.format(column_name), '{}_sum'.format(column_name)]
-        float16_features = ['{}_mean'.format(column_name), '{}_var'.format(column_name)]
-        data_df[int16_features] = data_df[int16_features].apply(lambda col: col.astype('int16'))
-        data_df[float16_features] = data_df[float16_features].apply(lambda col: col.astype('float16'))
 
-    LOGGER.info('Finish and returning dataframe with lag features')
+    # LOGGER.info('Filling missing data in columns in merged dataframe')
+    # data_df = data_df.fillna(0)
+
+    LOGGER.info('Downcast datatypes in merged dataframe')
+    # for lag in lags:
+    #     column_name = 'lag_{}'.format(lag)
+    #     int16_features = [column_name, '{}_min'.format(column_name), '{}_max'.format(column_name), '{}_median'.format(column_name), '{}_sum'.format(column_name)]
+    #     float16_features = ['{}_mean'.format(column_name), '{}_var'.format(column_name)]
+    #     data_df[int16_features] = data_df[int16_features].apply(lambda col: col.astype('int16'))
+    #     data_df[float16_features] = data_df[float16_features].apply(lambda col: col.astype('float16'))
+    downcast_datatypes(data_df)
     return data_df
 
 
@@ -156,10 +166,7 @@ def add_product_features(data_df):
                                            '{}/product_{}.h5'.format(DATA_DIR, 'ALL_PRODUCTS_LESS_FEATURES'))
     product_df = pd.read_hdf(file_location, 'product_df')
     data_df = data_df.merge(product_df, on='product_id', how='inner')
-    int16_features = ['actual', 'team_id', 'subproduct_type_id']
-    int32_features = ['product_id', 'product_type_id', 'brand_id', 'manufacturer_id', 'product_group_id']
-    data_df[int16_features] = data_df[int16_features].apply(lambda col: col.astype('int16'))
-    data_df[int32_features] = data_df[int32_features].apply(lambda col: col.astype('int32'))
+    downcast_datatypes(data_df)
     return data_df
 
 
@@ -168,8 +175,8 @@ def process_features(data_df, LOGGER):
 
     LOGGER.info('Processing seasonal features')
     data_df = add_seasonal_features(data_df)
-    LOGGER.info('Processing holiday features')
-    data_df = add_holiday_features(data_df)
+    # LOGGER.info('Processing holiday features')
+    # data_df = add_holiday_features(data_df)
     LOGGER.info('Processing lag features')
     data_df = add_lag_target_and_rolling_aggregate_features(data_df, lags=LAGS, LOGGER=LOGGER)
     LOGGER.info('Processing product features')
@@ -190,18 +197,13 @@ def add_fold_aware_features(train_features_df, test_features_df):
     full_agg_df = train_features_df.groupby('product_id').agg(full_num_aggregations)
     full_agg_df.columns = ["_full_".join(agg_feature) for agg_feature in full_agg_df.columns.ravel()]
     full_agg_df.reset_index(drop=False, inplace=True)
-    int16_features = ['actual_full_median']
-    float16_features = ['actual_full_mean', 'actual_full_var']
-    full_agg_df[int16_features] = full_agg_df[int16_features].apply(lambda col: col.astype('int16'))
-    full_agg_df[float16_features] = full_agg_df[float16_features].apply(lambda col: col.astype('float16'))
 
-    weekday_agg_df = train_features_df.groupby(['product_id', 'weekday']).agg(weekday_num_aggregations).astype('float16')
+    weekday_agg_df = train_features_df.groupby(['product_id', 'weekday']).agg(weekday_num_aggregations)
     weekday_agg_df.columns = ["_weekday_".join(agg_feature) for agg_feature in weekday_agg_df.columns.ravel()]
     weekday_agg_df.reset_index(drop=False, inplace=True)
-    int16_features = ['actual_weekday_max', 'actual_weekday_median']
-    float16_features = ['actual_weekday_mean']
-    weekday_agg_df[int16_features] = weekday_agg_df[int16_features].apply(lambda col: col.astype('int16'))
-    weekday_agg_df[float16_features] = weekday_agg_df[float16_features].apply(lambda col: col.astype('float16'))
+
+    downcast_datatypes(full_agg_df)
+    downcast_datatypes(weekday_agg_df)
 
     # month_agg_df = df.iloc[train_idx].groupby(['product_id', 'month']).agg(num_aggregations)
     # month_agg_df.columns = ["_month_".join(agg_feature) for agg_feature in month_agg_df.columns.ravel()]
@@ -223,13 +225,16 @@ def add_fold_aware_features(train_features_df, test_features_df):
 
     # Test adding some interactions between important features
     print('Generating interaction features ...')
-    train_features_df['full_mean_lag_7_median_prod'] = (train_features_df['actual_full_mean'] * train_features_df['lag_7_median']).astype('float16')
-    train_features_df['full_mean_lag_7_mean_prod'] = (train_features_df['actual_full_mean'] * train_features_df['lag_7_mean']).astype('float16')
-    train_features_df['weekday_mean_lag_7_median_prod'] = (train_features_df['actual_weekday_mean'] * train_features_df['lag_7_median']).astype('float16')
+    train_features_df['full_mean_lag_7_median_prod'] = (train_features_df['actual_full_mean'] * train_features_df['lag_7_median'])
+    train_features_df['full_mean_lag_7_mean_prod'] = (train_features_df['actual_full_mean'] * train_features_df['lag_7_mean'])
+    train_features_df['weekday_mean_lag_7_median_prod'] = (train_features_df['actual_weekday_mean'] * train_features_df['lag_7_median'])
 
-    test_features_df['full_mean_lag_7_median_prod'] = (test_features_df['actual_full_mean'] * test_features_df['lag_7_median']).astype('float16')
-    test_features_df['full_mean_lag_7_mean_prod'] = (test_features_df['actual_full_mean'] * test_features_df['lag_7_mean']).astype('float16')
-    test_features_df['weekday_mean_lag_7_median_prod'] = (test_features_df['actual_weekday_mean'] * test_features_df['lag_7_median']).astype('float16')
+    test_features_df['full_mean_lag_7_median_prod'] = (test_features_df['actual_full_mean'] * test_features_df['lag_7_median'])
+    test_features_df['full_mean_lag_7_mean_prod'] = (test_features_df['actual_full_mean'] * test_features_df['lag_7_mean'])
+    test_features_df['weekday_mean_lag_7_median_prod'] = (test_features_df['actual_weekday_mean'] * test_features_df['lag_7_median'])
+
+    downcast_datatypes(train_features_df)
+    downcast_datatypes(test_features_df)
 
     return train_features_df, test_features_df
 
@@ -243,18 +248,13 @@ def add_fold_aware_features_faster(features_df, train_idx):
     full_agg_df = features_df.iloc[train_idx].groupby('product_id').agg(full_num_aggregations)
     full_agg_df.columns = ["_full_".join(agg_feature) for agg_feature in full_agg_df.columns.ravel()]
     full_agg_df.reset_index(drop=False, inplace=True)
-    int16_features = ['actual_full_median']
-    float16_features = ['actual_full_mean', 'actual_full_var']
-    full_agg_df[int16_features] = full_agg_df[int16_features].apply(lambda col: col.astype('int16'))
-    full_agg_df[float16_features] = full_agg_df[float16_features].apply(lambda col: col.astype('float16'))
 
     weekday_agg_df = features_df.iloc[train_idx].groupby(['product_id', 'weekday']).agg(weekday_num_aggregations)
     weekday_agg_df.columns = ["_weekday_".join(agg_feature) for agg_feature in weekday_agg_df.columns.ravel()]
     weekday_agg_df.reset_index(drop=False, inplace=True)
-    int16_features = ['actual_weekday_max', 'actual_weekday_median']
-    float16_features = ['actual_weekday_mean']
-    weekday_agg_df[int16_features] = weekday_agg_df[int16_features].apply(lambda col: col.astype('int16'))
-    weekday_agg_df[float16_features] = weekday_agg_df[float16_features].apply(lambda col: col.astype('float16'))
+
+    downcast_datatypes(full_agg_df)
+    downcast_datatypes(weekday_agg_df)
 
     # month_agg_df = df.iloc[train_idx].groupby(['product_id', 'month']).agg(num_aggregations)
     # month_agg_df.columns = ["_month_".join(agg_feature) for agg_feature in month_agg_df.columns.ravel()]
@@ -276,5 +276,7 @@ def add_fold_aware_features_faster(features_df, train_idx):
     features_df['full_mean_lag_7_median_prod'] = features_df['actual_full_mean'] * features_df['lag_7_median'].astype('float16')
     features_df['full_mean_lag_7_mean_prod'] = features_df['actual_full_mean'] * features_df['lag_7_mean'].astype('float16')
     features_df['weekday_mean_lag_7_median_prod'] = features_df['actual_weekday_mean'] * features_df['lag_7_median'].astype('float16')
+
+    downcast_datatypes(features_df)
 
     return features_df

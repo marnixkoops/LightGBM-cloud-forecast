@@ -78,7 +78,7 @@ def lightgbm_calculate(config, cluster_name, disk_config, cores, memory):
     """
 
     executor = DataProcExecutor(config.project, cluster_name)
-    bucket_path = 'gs://coolblue-ds-demand-forecast-dev/madeleine/lightgbm/code/'
+    bucket_path = 'gs://coolblue-ds-demand-forecast-dev/marnix/lightgbm/code/'
     script_path = bucket_path + 'lightgbm_framework_faster.py'
     init_path = bucket_path + 'initialize_cluster.sh'
     python_files = ['custom_code.zip']
@@ -109,7 +109,7 @@ if __name__ == "__main__":
         data_df = load_data()
         LOGGER.info('Writing data to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
-            data_df.to_hdf('{}.h5'.format(tf.name), 'data_df',  index=False)
+            data_df.to_hdf('{}.h5'.format(tf.name), 'data_df', index=False)
             upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/actual_{}.h5'.format(DATA_DIR, RUNTAG))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.h5'.format(tf.name)])
@@ -121,7 +121,7 @@ if __name__ == "__main__":
         wa_forecast_df = load_wa_forecast()
         LOGGER.info('Writing WA to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
-            wa_forecast_df.to_hdf('{}.h5'.format(tf.name), 'wa_forecast_df',  index=False)
+            wa_forecast_df.to_hdf('{}.h5'.format(tf.name), 'wa_forecast_df', index=False)
             upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/wa_{}.h5'.format(DATA_DIR, RUNTAG))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.h5'.format(tf.name)])
@@ -176,12 +176,13 @@ if __name__ == "__main__":
         LOGGER.info('Writing results to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
             results_df.to_csv('{}.csv'.format(tf.name), index=False)
-            upload_file_to_gcs(PROJECT, BUCKET, '{}.csv'.format(tf.name), '{}/{}_results_with_wa_.csv'.format(BUCKET, RESULTS_DIR, RUNTAG))
+            upload_file_to_gcs(PROJECT, BUCKET, '{}.csv'.format(tf.name),
+                               '{}/{}_results_with_wa_.csv'.format(BUCKET, RESULTS_DIR, RUNTAG))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.csv'.format(tf.name)])
 
         LOGGER.info('Merging results with product ids to separate per groups')
-        file_location = download_file_from_gcs(PROJECT, BUCKET, '{}/product_{}.h5'.format(DATA_DIR, 'ALL_PRODUCTS_LESS_FEATURES'))
+        file_location = download_file_from_gcs(PROJECT, BUCKET, '{}/product_{}.h5'.format(DATA_DIR, RUNTAG))
         product_df = pd.read_hdf(file_location, 'product_df')
         subprocess.call(['rm', '-f', file_location])
 
@@ -199,8 +200,8 @@ if __name__ == "__main__":
         # How many products are in the subsetted categories?
         print('Products in OOS subset: {}, products in Promo subset: {}, '
               'Products in Normal subset: {}'.format(results_df_oos['product_id'].nunique(),
-                                                       results_df_promo['product_id'].nunique(),
-                                                       results_df_normal['product_id'].nunique()))
+                                                     results_df_promo['product_id'].nunique(),
+                                                     results_df_normal['product_id'].nunique()))
 
         # OOS types
         test_df_oos = results_df_oos[results_df_oos.is_test & results_df_oos.on_stock]

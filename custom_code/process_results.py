@@ -26,10 +26,10 @@ def write_metrics(test_df, filepath, features_names, params):
     overall_wmape_wa = wmape(test_df['actual'], test_df['wa'])
 
     print('Overall Huber LGBM: {:.5}, Overall MSE: {:.5}, Overall MAE: {:.5}, Overall MAPE: {:.5}, Overall Weighted MAPE: {:.5}'.format(
-            overall_huber_lgbm, overall_mse_lgbm, overall_mae_lgbm, overall_mape_lgbm, overall_wmape_lgbm))
+        overall_huber_lgbm, overall_mse_lgbm, overall_mae_lgbm, overall_mape_lgbm, overall_wmape_lgbm))
 
     print('Overall Huber WA: {:.5}, Overall MSE: {:.5}, Overall MAE: {:.5}, Overall MAPE: {:.5}, Overall Weighted MAPE: {:.5}'.format(
-            overall_huber_wa, overall_mse_wa, overall_mae_wa, overall_mape_wa, overall_wmape_wa))
+        overall_huber_wa, overall_mse_wa, overall_mae_wa, overall_mape_wa, overall_wmape_wa))
 
     model_id = RUNTAG + '_Huber_{:.5}'.format(overall_huber_lgbm)
 
@@ -44,11 +44,11 @@ def write_metrics(test_df, filepath, features_names, params):
 
         print('LGBM', file=text_file)
         print('Overall Huber: {:.5}, Overall MSE: {:.5}, Overall MAE: {:.5}, Overall MAPE: {:.5}, Overall Weighted MAPE: {:.5}'.format(
-                overall_huber_lgbm, overall_mse_lgbm, overall_mae_lgbm, overall_mape_lgbm, overall_wmape_lgbm), file=text_file)
+            overall_huber_lgbm, overall_mse_lgbm, overall_mae_lgbm, overall_mape_lgbm, overall_wmape_lgbm), file=text_file)
 
         print('WA', file=text_file)
         print('Overall Huber: {:.5}, Overall MSE: {:.5}, Overall MAE: {:.5}, Overall MAPE: {:.5}, Overall Weighted MAPE: {:.5}'.format(
-                overall_huber_wa, overall_mse_wa, overall_mae_wa, overall_mape_wa, overall_wmape_wa), file=text_file)
+            overall_huber_wa, overall_mse_wa, overall_mae_wa, overall_mape_wa, overall_wmape_wa), file=text_file)
         print("Parameters: {}".format(params), file=text_file)
         print("Features: {}".format(features_names), file=text_file)
 
@@ -82,7 +82,8 @@ def write_metrics(test_df, filepath, features_names, params):
 def process_results(results_df, feature_importance_df, params):
     print('Processing results ...')
     # Join with baseline model
-    file_location = download_file_from_gcs(PROJECT, BUCKET, '{}/wa_{}.h5'.format(DATA_DIR, 'ALL_PRODUCTS_LESS_FEATURES'))
+    file_location = download_file_from_gcs(
+        PROJECT, BUCKET, '{}/wa_{}.h5'.format(DATA_DIR, 'ALL_PRODUCTS_LESS_FEATURES'))
     wa_df = pd.read_hdf(file_location, 'wa_forecast_df')
     results_df = pd.merge(results_df, wa_df, how='left', on=['date', 'product_id'])
     subprocess.call(['rm', '-f', file_location])
@@ -104,17 +105,13 @@ def process_results(results_df, feature_importance_df, params):
         shap_df = dd.read_csv('./shap_*_{}.csv'.format(RUNTAG))
         shap_df = shap_df.compute()
 
-    for fold in range(max(feature_importance_df['fold'] + 1)):
-        fold_feature_importance_df = feature_importance_df[feature_importance_df.fold == fold].drop('fold', axis=1)
-        plot_importances(fold_feature_importance_df, fold, type='split')
-        plot_importances(fold_feature_importance_df, fold, type='gain')
+    plot_importances(feature_importance_df, type='split')
+    plot_importances(feature_importance_df, type='gain')
 
-        # Only plot SHAP if they were computed
-        if COMPUTE_SHAP:
-            fold_shap_df = shap_df[shap_df.fold == fold].drop(['fold', 'date'], axis=1)
-            plot_shap_importances(fold_shap_df.values, fold_shap_df.columns, fold)
-            del fold_shap_df
-
-        del fold_feature_importance_df
+    # Only plot SHAP if they were computed
+    # if COMPUTE_SHAP:
+    #     fold_shap_df = shap_df[shap_df.fold == fold].drop(['fold', 'date'], axis=1)
+    #     plot_shap_importances(fold_shap_df.values, fold_shap_df.columns, fold)
+    #     del fold_shap_df
 
     return results_df

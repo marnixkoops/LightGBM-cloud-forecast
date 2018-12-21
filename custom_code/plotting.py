@@ -14,7 +14,7 @@ init_notebook_mode(connected=True)
 
 
 # Split / gain feature importances
-def plot_importances(feature_importance_df, fold, type='gain'):
+def plot_importances(feature_importance_df, type='gain'):
     file_location = tempfile.NamedTemporaryFile(delete=False).name
     cols = feature_importance_df[['feature', '{}'.format(type)]].groupby('feature').mean().index
     best_features = feature_importance_df.loc[feature_importance_df.feature.isin(cols)].sort_values(
@@ -29,8 +29,8 @@ def plot_importances(feature_importance_df, fold, type='gain'):
     plt.title('mean {} importance (Over folds + Std dev)'.format(type))
     plt.savefig('{}.png'.format(file_location))
     plt.clf()
-    
-    upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/imp_{}_{}_{}.png'.format(PLOTS_DIR, type, fold, RUNTAG))
+
+    upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/imp_{}_overall_{}.png'.format(PLOTS_DIR, type, RUNTAG))
 
 
 # Simple SHAP feature importances
@@ -40,7 +40,7 @@ def plot_shap_importances(shap_values, features_names, fold):
     plt.title('mean SHAP importance')
     plt.savefig('{}.png'.format(file_location))
     plt.clf()
-    
+
     upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/imp_shap_{}_{}.png'.format(PLOTS_DIR, fold, RUNTAG))
 
 
@@ -73,7 +73,7 @@ def plot_product(product_id, results_df, metrics_df, fold, results_subset_df=Non
     if results_subset_df is not None and results_productid_df is not None:
         data = [actual, lgbm_train, lgbm_test, lgbm_train_subset, lgbm_test_subset, lgbm_train_productid, lgbm_test_productid, wa, oos]
     if results_subset_df is not None and results_productid_df is None:
-        data = [actual, lgbm_train, lgbm_test, lgbm_train_subset, lgbm_test_subset,  wa, oos]
+        data = [actual, lgbm_train, lgbm_test, lgbm_train_subset, lgbm_test_subset, wa, oos]
     if results_subset_df is None and results_productid_df is not None:
         data = [actual, lgbm_train, lgbm_test, lgbm_train_productid, lgbm_test_productid, wa, oos]
     title = '<b>LightGBM vs WA Fold {}</b> <br> product_id: {} | Huber: {:.5} vs {:.5} | MSE: {:.5} vs {:.5}'.format(
