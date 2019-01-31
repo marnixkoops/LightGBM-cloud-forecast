@@ -3,14 +3,6 @@
 
 <br/>
 
-### **`⚡`** SUMMARY
-
-Many improvements have been over the last couple stories. From improving the model, refactoring many steps of the framework, massively speeding up experimentation to implementing a better cross-validation and metric calculation setup. 
-
-We have hit a milestone and we can start working on productionizing the current model. This does not imply development is finished, a lot of room is left for further improvements. Both in the area of feature engineering (improving current features + adding more feature sources such as pricing and marketing) as well as parameter optimization. Yet, current performance is very promising!
-
----
-
 ### **`⚡`** VALIDATION
 
 First, we compare performance of the LightGBM model to our current baseline WA model. For the error metrics of interest, we compute summary statistics for the distribution of all products. Both the mean and the median is considered, clearly the mean is impacted more due to high outlying errors whereas the median is a more robust measure of centrality in case of an asymmetric distribution.
@@ -165,16 +157,6 @@ PARAMS = {
     'reg_lambda': 0.0,
     'verbose': -1
 }
-```
-
-###### INPUT/OUTPUT
-
-* Removed unneccesary writing of objects and dataframes that are currently not used. For example, booster objects for every fold. Also remove overlapping observations due to growing train folds with a moving timeseries window. The first observation is preserved in the final results frame. This means that the correct in-sample train fit and out-of-fold test predictions are kept at any point in time.
-
-* Found a parameter in the Google Python API to control chunk sizing for uploading and downloading to GCS. This significantly speeds up all up- and downloading. 
-
-```
-blob.chunk_size = 1 << 29 # Increased chunk size for faster downloading
 ```
 
 ###### RESULTS PROCESSING
