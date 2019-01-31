@@ -112,10 +112,6 @@ Where the magic happens.
 
 ###### FIGURE 13: Shapley Value Attributions
 ![shap](img/shap_overall.png)
-###### FIGURE 14: Gain (mean and standard deviation over folds)
-![gain](img/overall_imp_gain_Huber_0.32224_40K_WA7_NEWCV.png)
-###### FIGURE 15: Split (mean and standard deviation over folds)
-![split](img/overall_imp_split_Huber_0.32224_40K_WA7_NEWCV.png)
 
 ---
 
