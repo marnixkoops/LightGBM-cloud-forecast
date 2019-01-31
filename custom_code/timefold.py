@@ -1,6 +1,6 @@
 import numpy as np
 
-from custom_code.settings import NUM_FOLDS
+# from custom_code.settings import NUM_FOLDS
 
 
 class timefold(object):
@@ -55,7 +55,7 @@ class timefold(object):
             To be implemented
     """
 
-    def __init__(self, folds=NUM_FOLDS+1, method='nested', min_train_size=1, min_test_size=1, step_size=1):
+    def __init__(self, folds=10, method='nested', min_train_size=1, min_test_size=1, step_size=1):
         self.folds = folds
         self.method = method
         self.min_train_size = min_train_size
@@ -108,4 +108,3 @@ class timefold(object):
         else:
             raise ValueError("Unknown method supplied '{0}'. Method must be one of: 'nested', 'window', 'step', "
                              "'stratified'".format(method))
-    

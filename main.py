@@ -1,11 +1,11 @@
 import tempfile
 import subprocess
-import shutil
+import os
+import zipfile
 
 import gc
-import pandas as pd
 import dask.dataframe as dd
-from sklearn.metrics import mean_absolute_error as mae, mean_squared_error as mse
+import pandas as pd
 
 from custom_code.upload_file_to_gcs import upload_file_to_gcs
 from custom_code.download_file_from_gcs import download_file_from_gcs
@@ -13,36 +13,27 @@ from custom_code.load_data import load_data
 from custom_code.load_wa_forecast import load_wa_forecast
 from custom_code.load_product import load_product
 from custom_code.process_results import process_results
-from custom_code.settings import RUNTAG, PROJECT, BUCKET, DATA_DIR, RESULTS_DIR, CODE_DIR, PARAMS
+from custom_code.settings import RUNTAG, PROJECT, BUCKET, DATA_DIR, CODE_DIR, RESULTS_DIR, PARAMS
 from custom_code.metrics import mean_huber, mape, wmape
 from datascience.google_cloud.data_proc_executor import DataProcExecutor
 from datascience.monitoring.logger import get_logger
 
-
 LOGGER = get_logger()
+LOGGER.setLevel('DEBUG')
 
 DATA = False
 WA_FORECAST = False
 PRODUCT = False
-FEATURES = False
-# Train and predict writing intermediate I/O files (slow!)
-FOLDS_AND_SLICES = False
-FOLD_AWARE_FEATURES = False
-TRAIN_PER_FOLD = False
-PREDICT_PER_FOLD = False
+# Train and predict in a single step (avoid intermediate I/O files)
+TRAIN_AND_PREDICT = False
 RESULTS = True
 
 
-def downcast_datatypes(df):
-    float_cols = df.select_dtypes(include=['float'])
-    int_cols = df.select_dtypes(include=['int'])
-
-    for cols in float_cols.columns:
-        df[cols] = pd.to_numeric(df[cols], downcast='float')
-    for cols in int_cols.columns:
-        df[cols] = pd.to_numeric(df[cols], downcast='integer')
-
-    return df
+def zipdir(path, ziph):
+    # ziph is zipfile handle
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            ziph.write(os.path.join(root, file))
 
 
 def lightgbm_upload_files():
@@ -53,10 +44,13 @@ def lightgbm_upload_files():
     """
     LOGGER.info('Uploading code files to GS bucket for calculation')
     upload_file_to_gcs(PROJECT, BUCKET, './initialize_cluster.sh', '{}/initialize_cluster.sh'.format(CODE_DIR))
-    upload_file_to_gcs(PROJECT, BUCKET, './lightgbm_framework.py', '{}/lightgbm_framework.py'.format(CODE_DIR))
-    shutil.make_archive('./custom_code', 'zip', './custom_code')
+    upload_file_to_gcs(PROJECT, BUCKET,
+                       './lightgbm_framework.py', '{}/lightgbm_framework.py'.format(CODE_DIR))
+    zipf = zipfile.ZipFile('./custom_code.zip', 'w', zipfile.ZIP_DEFLATED)
+    zipdir('./custom_code/', zipf)
+    zipf.close()
     upload_file_to_gcs(PROJECT, BUCKET, './custom_code.zip', '{}/custom_code.zip'.format(CODE_DIR))
-    LOGGER.info('Calculate files uploaded')
+    LOGGER.info('Code files uploaded')
 
 
 def lightgbm_calculate(config, cluster_name, disk_config, cores, memory):
@@ -71,7 +65,7 @@ def lightgbm_calculate(config, cluster_name, disk_config, cores, memory):
     """
 
     executor = DataProcExecutor(config.project, cluster_name)
-    bucket_path = 'gs://coolblue-ds-demand-forecast-dev/madeleine/lightgbm/code/'
+    bucket_path = 'gs://coolblue-ds-demand-forecast-dev/marnix/lightgbm/code/'
     script_path = bucket_path + 'lightgbm_framework.py'
     init_path = bucket_path + 'initialize_cluster.sh'
     python_files = ['custom_code.zip']
@@ -80,22 +74,15 @@ def lightgbm_calculate(config, cluster_name, disk_config, cores, memory):
     init_actions = [init_path]
 
     job_args = str({
-        'project': config.project,
-        'features': FEATURES,
-        'folds_and_slices': FOLDS_AND_SLICES,
-        'fold_aware_features': FOLD_AWARE_FEATURES,
-        'train_per_fold': TRAIN_PER_FOLD,
-        'predict_per_fold': PREDICT_PER_FOLD
+        'project': config.project
     })
 
     try:
-        # executor.create_single_node_dataproc_cluster(disk_config=disk_config, init_actions=init_actions,
-        #                                              cores=cores, memory=memory)
-        executor.execute_dataproc_job(script=script_path, args=job_args, python_files=['gs://coolblue-ds-demand-forecast-dev/madeleine/lightgbm/code/custom_code.zip'])
+        executor.create_single_node_dataproc_cluster(disk_config=disk_config, init_actions=init_actions,
+                                                     cores=cores, memory=memory)
+        executor.execute_dataproc_job(script=script_path, args=job_args, python_files=python_files)
     finally:
-        # executor.delete_dataproc_cluster()
-        pass
-
+        executor.delete_dataproc_cluster()
 
 if __name__ == "__main__":
 
@@ -108,8 +95,8 @@ if __name__ == "__main__":
         data_df = load_data()
         LOGGER.info('Writing data to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
-            data_df.to_hdf('{}.h5'.format(tf.name), 'data_df',  index=False)
-            upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/actual_{}.h5'.format(DATA_DIR, RUNTAG))
+            data_df.to_hdf('{}.h5'.format(tf.name), 'data_df', index=False)
+            upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/actual.h5'.format(DATA_DIR))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.h5'.format(tf.name)])
         del data_df
@@ -120,8 +107,8 @@ if __name__ == "__main__":
         wa_forecast_df = load_wa_forecast()
         LOGGER.info('Writing WA to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
-            wa_forecast_df.to_hdf('{}.h5'.format(tf.name), 'wa_forecast_df',  index=False)
-            upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/wa_{}.h5'.format(DATA_DIR, RUNTAG))
+            wa_forecast_df.to_hdf('{}.h5'.format(tf.name), 'wa_forecast_df', index=False)
+            upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/wa.h5'.format(DATA_DIR))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.h5'.format(tf.name)])
         del wa_forecast_df
@@ -133,7 +120,7 @@ if __name__ == "__main__":
         LOGGER.info('Writing Product to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
             product_df.to_hdf('{}.h5'.format(tf.name), 'product_df', index=False)
-            upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/product_{}.h5'.format(DATA_DIR, RUNTAG))
+            upload_file_to_gcs(PROJECT, BUCKET, '{}.h5'.format(tf.name), '{}/product.h5'.format(DATA_DIR))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.h5'.format(tf.name)])
         del product_df
@@ -142,124 +129,47 @@ if __name__ == "__main__":
     ############################ Steps running in the cloud ###########################
     ###################################################################################
 
-    if FEATURES or FOLDS_AND_SLICES or FOLD_AWARE_FEATURES or TRAIN_PER_FOLD or PREDICT_PER_FOLD:
+    if TRAIN_AND_PREDICT:
 
         class Config:
             project = 'coolblue-bi-platform-dev'
 
         kwargs = {
-            'cluster_name': 'lightgbm',
-            'disk_config': {'bootDiskSizeGb': 400, 'numLocalSsds': 0},
-            'cores': 64,
-            'memory': 416
+            'cluster_name': 'lightgbm64',
+            'disk_config': {'bootDiskSizeGb': 1024, 'numLocalSsds': 0}, # 'bootDiskType': 'pd-standard'
+            'cores': 64, # 64
+            'memory': 412 # 412
         }
 
-        # lightgbm_upload_files()
-
+        lightgbm_upload_files()
         lightgbm_calculate(Config(), **kwargs)
 
     ############################## Steps running locally ##############################
     ###################################################################################
 
     if RESULTS:
+
         LOGGER.info('Calculating final results with WA')
         LOGGER.info('Reading results and feature importance per fold')
         results_df = dd.read_csv('gs://{}/{}/results_*_{}.csv'.format(BUCKET, RESULTS_DIR, RUNTAG))
         results_df = results_df.compute()
-        features_importance_df = dd.read_csv('gs://{}/{}/importance_*_{}.csv'.format(BUCKET, RESULTS_DIR, RUNTAG))
+        # Drop overlap (due to growing folds we have the same observations n times in there)
+        # All test folds are preserved as they appear first in the frame
+        # Note that at any point in time the train fold (in-sample fit) is correct as it only uses data from the past
+        # This does mean that the latest fold would produce a better in-sample fit throughout the sample which is not stored
+        results_df.drop_duplicates(subset=['product_id', 'date'], keep='first', inplace=True)
+        features_importance_df = dd.read_csv('gs://{}/{}/overall_importance_{}.csv'.format(BUCKET, RESULTS_DIR, RUNTAG))
         features_importance_df = features_importance_df.compute()
         LOGGER.info('Processing results')
-        results_df = process_results(results_df, features_importance_df, PARAMS)
-        results_df = downcast_datatypes(results_df)
-        LOGGER.info('Writing results to GCS')
+        process_results(results_df, features_importance_df, PARAMS)
+        LOGGER.info('Writing results with WA to GCS')
         with open(tempfile.NamedTemporaryFile().name, 'w') as tf:
             results_df.to_csv('{}.csv'.format(tf.name), index=False)
-            upload_file_to_gcs(PROJECT, BUCKET, '{}.csv'.format(tf.name), '{}/{}_results_with_wa_.csv'.format(RESULTS_DIR, RUNTAG))
+            upload_file_to_gcs(PROJECT, BUCKET, '{}.csv'.format(tf.name),
+                               '{}/{}/results_with_wa_{}.csv'.format(BUCKET, RESULTS_DIR, RUNTAG))
         subprocess.call(['rm', '-f', tf.name])
         subprocess.call(['rm', '-f', '{}.csv'.format(tf.name)])
 
-        file_location = download_file_from_gcs(PROJECT, BUCKET, '{}/product_{}.h5'.format(DATA_DIR, RUNTAG))
-        product_df = pd.read_hdf(file_location, 'product_df')
-        subprocess.call(['rm', '-f', file_location])
-
-        results_df = pd.merge(results_df, product_df, how='left', on='product_id')
-
-        # Create df with OOS after season product types (supplied by Arthur)
-        results_df_oos = results_df[results_df['product_type_id'].isin([4396, 4999, 5539, 2369, 2703])].dropna()
-        # Create df with promotion product types (supplied by Arthur)
-        results_df_promo = results_df[results_df['product_type_id'].isin([2233, 2341, 2627, 5600, 2063])].dropna()
-        # Create df with normal product types (supplied by Arthur)
-        results_df_normal = results_df[results_df['product_type_id'].isin([2452, 2458, 2096, 2090,
-                                                                           2048, 2250, 2562, 9504])].dropna()
-
-        # How many products are in the subsetted categories?
-        print('Products in OOS subset: {}, products in Promo subset: {}, '
-              'Products in "Normal subset: {}"'.format(results_df_oos['product_id'].nunique(),
-                                                       results_df_promo['product_id'].nunique(),
-                                                       results_df_normal['product_id'].nunique()))
-
-        # OOS types
-        test_df_oos = results_df_oos[results_df_oos.is_test & results_df_oos.on_stock]
-        if len(test_df_oos) > 0:
-            print(
-                'OOS product types overall metrics [LGBM, WA] \n '
-                'Huber: {:.5} {:.5} \n '
-                'MSE: {:.5} {:.5} \n '
-                'MAE: {:.5} {:.5} \n '
-                'MAPE: {:.5} {:.5} \n '
-                'wMAPE: {:.5} {:.5}'.format(
-                    mean_huber(test_df_oos['actual'], test_df_oos['lgbm']),
-                    mean_huber(test_df_oos['actual'], test_df_oos['wa']),
-                    mse(test_df_oos['actual'], test_df_oos['lgbm']),
-                    mse(test_df_oos['actual'], test_df_oos['wa']),
-                    mae(test_df_oos['actual'], test_df_oos['lgbm']),
-                    mae(test_df_oos['actual'], test_df_oos['wa']),
-                    mape(test_df_oos['actual'], test_df_oos['lgbm']),
-                    mape(test_df_oos['actual'], test_df_oos['wa']),
-                    wmape(test_df_oos['actual'], test_df_oos['lgbm']),
-                    wmape(test_df_oos['actual'], test_df_oos['wa'])))
-
-        # Promo types
-        test_df_promo = results_df_promo[results_df_promo.is_test & results_df_promo.on_stock]
-        if len(test_df_promo) > 0:
-            print(
-                'Promo product types overall metrics [LGBM, WA] \n '
-                'Huber: {:.5} {:.5} \n '
-                'MSE: {:.5} {:.5} \n '
-                'MAE: {:.5} {:.5} \n '
-                'MAPE: {:.5} {:.5} \n '
-                'wMAPE: {:.5} {:.5}'.format(
-                    mean_huber(test_df_promo['actual'], test_df_promo['lgbm']),
-                    mean_huber(test_df_promo['actual'], test_df_promo['wa']),
-                    mse(test_df_promo['actual'], test_df_promo['lgbm']),
-                    mse(test_df_promo['actual'], test_df_promo['wa']),
-                    mae(test_df_promo['actual'], test_df_promo['lgbm']),
-                    mae(test_df_promo['actual'], test_df_promo['wa']),
-                    mape(test_df_promo['actual'], test_df_promo['lgbm']),
-                    mape(test_df_promo['actual'], test_df_promo['wa']),
-                    wmape(test_df_promo['actual'], test_df_promo['lgbm']),
-                    wmape(test_df_promo['actual'], test_df_promo['wa'])))
-
-        # Normal types
-        test_df_normal = results_df_normal[results_df_normal.is_test & results_df_normal.on_stock]
-        if len(test_df_normal) > 0:
-            print(
-                'Normal product types overall metrics [LGBM, WA] \n '
-                'Huber: {:.5} {:.5} \n '
-                'MSE: {:.5} {:.5} \n '
-                'MAE: {:.5} {:.5} \n '
-                'MAPE: {:.5} {:.5} \n '
-                'wMAPE: {:.5} {:.5}'.format(
-                    mean_huber(test_df_normal['actual'], test_df_normal['lgbm']),
-                    mean_huber(test_df_normal['actual'], test_df_normal['wa']),
-                    mse(test_df_normal['actual'], test_df_normal['lgbm']),
-                    mse(test_df_normal['actual'], test_df_normal['wa']),
-                    mae(test_df_normal['actual'], test_df_normal['lgbm']),
-                    mae(test_df_normal['actual'], test_df_normal['wa']),
-                    mape(test_df_normal['actual'], test_df_normal['lgbm']),
-                    mape(test_df_normal['actual'], test_df_normal['wa']),
-                    wmape(test_df_normal['actual'], test_df_normal['lgbm']),
-                    wmape(test_df_normal['actual'], test_df_normal['wa'])))
-
-        del results_df, product_df, features_importance_df, results_df_oos, results_df_promo, results_df_normal
+        del results_df, features_importance_df
         gc.collect()
+        print('Finished')

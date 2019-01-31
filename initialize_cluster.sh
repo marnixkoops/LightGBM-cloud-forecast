@@ -80,7 +80,8 @@ $PIP_EXECUTABLE install google-cloud-bigquery==0.24.0
 $PIP_EXECUTABLE install google-cloud-storage==1.0.0
 $PIP_EXECUTABLE install google-cloud-datastore==1.0.0
 $PIP_EXECUTABLE install jsonschema==2.5.1
-$PIP_EXECUTABLE install matplotlib>=1.5.3 # For glmnet
+$PIP_EXECUTABLE install matplotlib>=1.5.3
+$PIP_EXECUTABLE install seaborn
 $PIP_EXECUTABLE install numpy==1.11.3
 $PIP_EXECUTABLE install openpyxl>=2.3.2
 $PIP_EXECUTABLE install pandas==0.19.2
@@ -94,7 +95,6 @@ $PIP_EXECUTABLE install sortedcontainers==1.5.7
 $PIP_EXECUTABLE install workalendar==0.8.1
 $PIP_EXECUTABLE install xgboost==0.80
 $PIP_EXECUTABLE install typing==3.6.4
-$PIP_EXECUTABLE install lightgbm==2.2.2 # --install-option=--gpu
+$PIP_EXECUTABLE install lightgbm==2.2.2
 $PIP_EXECUTABLE install tables==3.4.4
-# GLMnet:
-# $PIP_EXECUTABLE install -e git+https://github.com/bbalasub1/glmnet_python.git@97cb8400a2e5e6c2509d3a3448a78c0c37f6c734#egg=glmnet_python
+$PIP_EXECUTABLE install tsfresh

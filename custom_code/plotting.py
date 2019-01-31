@@ -2,8 +2,9 @@ import matplotlib as mpl
 mpl.use('TkAgg')
 import tempfile
 import matplotlib.pyplot as plt
-import shap
 import seaborn as sns
+sns.set_style("darkgrid")
+
 # Load and initialize plotly
 import plotly.graph_objs as go
 from plotly.offline import iplot, init_notebook_mode
@@ -14,34 +15,36 @@ init_notebook_mode(connected=True)
 
 
 # Split / gain feature importances
-def plot_importances(feature_importance_df, type='gain'):
+def plot_importances(features_importance_df, overall_huber_lgbm, type='gain'):
     file_location = tempfile.NamedTemporaryFile(delete=False).name
-    cols = feature_importance_df[['feature', '{}'.format(type)]].groupby('feature').mean().index
-    best_features = feature_importance_df.loc[feature_importance_df.feature.isin(cols)].sort_values(
+    cols = features_importance_df[['feature', '{}'.format(type)]].groupby('feature').mean().index
+    best_features = features_importance_df.loc[features_importance_df.feature.isin(cols)].sort_values(
         by='{}'.format(type), ascending=False)
     plt.figure(figsize=(9, 12))
     sns.barplot(
-        y='feature',
         x=type,
-        data=best_features.sort_values(by=type, ascending=False)
-    )
+        y='feature',
+        data=best_features.sort_values(by=type, ascending=False),
+        palette='plasma',
+        ci='sd'
+        )
     plt.tight_layout()
-    plt.title('mean {} importance (Over folds + Std dev)'.format(type))
+    plt.title('\n LightGBM Huber: {:.5} \n Mean {} importance (over folds + sd)'.format(overall_huber_lgbm, type), weight='bold')
     plt.savefig('{}.png'.format(file_location))
     plt.clf()
 
-    upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/imp_{}_overall_{}.png'.format(PLOTS_DIR, type, RUNTAG))
+    upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/overall_imp_{}_Huber_{:.5}_{}.png'.format(PLOTS_DIR, type, overall_huber_lgbm, RUNTAG))
 
 
-# Simple SHAP feature importances
-def plot_shap_importances(shap_values, features_names, fold):
-    file_location = tempfile.NamedTemporaryFile(delete=False).name
-    shap.summary_plot(shap_values, features_names, plot_type='bar', show=False, max_display=len(features_names), auto_size_plot=True)
-    plt.title('mean SHAP importance')
-    plt.savefig('{}.png'.format(file_location))
-    plt.clf()
-
-    upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/imp_shap_{}_{}.png'.format(PLOTS_DIR, fold, RUNTAG))
+# # Simple SHAP feature importances
+# def plot_shap_importances(shap_values, features_names, fold):
+#     file_location = tempfile.NamedTemporaryFile(delete=False).name
+#     shap.summary_plot(shap_values, features_names, plot_type='bar', show=False, max_display=len(features_names), auto_size_plot=True)
+#     plt.title('mean SHAP importance')
+#     plt.savefig('{}.png'.format(file_location))
+#     plt.clf()
+#
+#     upload_file_to_gcs(PROJECT, BUCKET, '{}.png'.format(file_location), '{}/imp_shap_{}_{}.png'.format(PLOTS_DIR, fold, RUNTAG))
 
 
 def plot_product(product_id, results_df, metrics_df, fold, results_subset_df=None, results_productid_df=None):
@@ -73,7 +76,7 @@ def plot_product(product_id, results_df, metrics_df, fold, results_subset_df=Non
     if results_subset_df is not None and results_productid_df is not None:
         data = [actual, lgbm_train, lgbm_test, lgbm_train_subset, lgbm_test_subset, lgbm_train_productid, lgbm_test_productid, wa, oos]
     if results_subset_df is not None and results_productid_df is None:
-        data = [actual, lgbm_train, lgbm_test, lgbm_train_subset, lgbm_test_subset, wa, oos]
+        data = [actual, lgbm_train, lgbm_test, lgbm_train_subset, lgbm_test_subset,  wa, oos]
     if results_subset_df is None and results_productid_df is not None:
         data = [actual, lgbm_train, lgbm_test, lgbm_train_productid, lgbm_test_productid, wa, oos]
     title = '<b>LightGBM vs WA Fold {}</b> <br> product_id: {} | Huber: {:.5} vs {:.5} | MSE: {:.5} vs {:.5}'.format(

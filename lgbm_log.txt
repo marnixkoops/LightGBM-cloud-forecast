@@ -1,0 +1,2733 @@
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.40545
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.40545, Overall MSE: 4.1622, Overall MAE: 0.63178, Overall MAPE: 0.26329, Overall Weighted MAPE: 0.6802
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'num_leaves': 82, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: ['product_id', 'year', 'quarter', 'month', 'weekday', 'dayofmonth', 'weekofyear', 'dayofyear', 'holiday_nl', 'holiday_be', 'holiday_nl_min_1', 'holiday_nl_plus_1', 'holiday_be_min_1', 'holiday_be_plus_1', 'holiday_nl_min_2', 'holiday_nl_plus_2', 'holiday_be_min_2', 'holiday_be_plus_2', 'holiday_nl_min_3', 'holiday_nl_plus_3', 'holiday_be_min_3', 'holiday_be_plus_3', 'holiday_nl_min_4', 'holiday_nl_plus_4', 'holiday_be_min_4', 'holiday_be_plus_4', 'holiday_nl_min_5', 'holiday_nl_plus_5', 'holiday_be_min_5', 'holiday_be_plus_5', 'lag_7', 'lag_7_min', 'lag_7_max', 'lag_7_mean', 'lag_7_median', 'lag_7_sum', 'lag_7_var', 'lag_8', 'lag_8_min', 'lag_8_max', 'lag_8_mean', 'lag_8_median', 'lag_8_sum', 'lag_8_var', 'lag_9', 'lag_9_min', 'lag_9_max', 'lag_9_mean', 'lag_9_median', 'lag_9_sum', 'lag_9_var', 'lag_14', 'lag_14_min', 'lag_14_max', 'lag_14_mean', 'lag_14_median', 'lag_14_sum', 'lag_14_var', 'lag_21', 'lag_21_min', 'lag_21_max', 'lag_21_mean', 'lag_21_median', 'lag_21_sum', 'lag_21_var', 'product_type_id', 'brand_id', 'manufacturer_id', 'product_group_id', 'team_id', 'subproduct_type_id', 'actual_full_mean', 'actual_full_median', 'actual_full_var', 'actual_weekday_max', 'actual_weekday_mean', 'actual_weekday_median', 'full_mean_lag_7_median_prod', 'full_mean_lag_7_mean_prod', 'weekday_mean_lag_7_median_prod']
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37009		Weighted Average: 0.37404
+MSE		| LightGBM: 2.3928		Weighted Average: 2.1002
+MAE		| LightGBM: 0.5957		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.25631		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.6896		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45917		Weighted Average: 0.44448
+MSE		| LightGBM: 3.4137		Weighted Average: 2.883
+MAE		| LightGBM: 0.69497		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.26704		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.64983		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.44394		Weighted Average: 0.44832
+MSE		| LightGBM: 4.3841		Weighted Average: 3.7668
+MAE		| LightGBM: 0.68354		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.29922		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.69295		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.37129		Weighted Average: 0.37758
+MSE		| LightGBM: 2.778		Weighted Average: 2.5425
+MAE		| LightGBM: 0.60054		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.26333		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.68151		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.40466		Weighted Average: 0.39935
+MSE		| LightGBM: 3.8082		Weighted Average: 3.0682
+MAE		| LightGBM: 0.63123		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.25866		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.67081		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.37835		Weighted Average: 0.38004
+MSE		| LightGBM: 3.0542		Weighted Average: 2.5966
+MAE		| LightGBM: 0.60035		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.25667		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.6691		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34974		Weighted Average: 0.35516
+MSE		| LightGBM: 2.7707		Weighted Average: 2.3358
+MAE		| LightGBM: 0.56439		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.24679		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.68147		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.46433		Weighted Average: 0.45986
+MSE		| LightGBM: 10.1		Weighted Average: 8.1637
+MAE		| LightGBM: 0.6822		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.2564		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.7091		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41773		Weighted Average: 0.45045
+MSE		| LightGBM: 5.9053		Weighted Average: 4.4464
+MAE		| LightGBM: 0.64277		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.26908		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.67819		Weighted Average: 0.70908
+
+Products in OOS subset: 477, products in Promo subset: 118, Products in Normal subset: 1411
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.11405 0.11826 
+ MSE: 1.452 1.3724 
+ MAE: 0.22097 0.22611 
+ MAPE: 0.11778 0.12916 
+ wMAPE: 0.9637 0.98611
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.3483 1.2742 
+ MSE: 28.48 21.924 
+ MAE: 1.6975 1.6283 
+ MAPE: 0.44763 0.48601 
+ wMAPE: 0.54069 0.51863
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16277 0.16489 
+ MSE: 0.68475 0.65425 
+ MAE: 0.3197 0.31509 
+ MAPE: 0.17701 0.18015 
+ wMAPE: 0.89405 0.88117
+ 
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.4054
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.4054, Overall MSE: 4.1736, Overall MAE: 0.63172, Overall MAPE: 0.26297, Overall Weighted MAPE: 0.68014
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: []
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37032		Weighted Average: 0.37404
+MSE		| LightGBM: 2.4012		Weighted Average: 2.1002
+MAE		| LightGBM: 0.59628		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.25688		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.69026		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45901		Weighted Average: 0.44448
+MSE		| LightGBM: 3.4145		Weighted Average: 2.883
+MAE		| LightGBM: 0.69492		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.26645		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.64979		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.44309		Weighted Average: 0.44832
+MSE		| LightGBM: 4.3237		Weighted Average: 3.7668
+MAE		| LightGBM: 0.6828		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.2992		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.69219		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.37111		Weighted Average: 0.37758
+MSE		| LightGBM: 2.7888		Weighted Average: 2.5425
+MAE		| LightGBM: 0.59979		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.26211		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.68065		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.40499		Weighted Average: 0.39935
+MSE		| LightGBM: 3.8159		Weighted Average: 3.0682
+MAE		| LightGBM: 0.6319		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.25902		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.67153		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.37858		Weighted Average: 0.38004
+MSE		| LightGBM: 3.0887		Weighted Average: 2.5966
+MAE		| LightGBM: 0.6005		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.25583		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.66927		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34959		Weighted Average: 0.35516
+MSE		| LightGBM: 2.7897		Weighted Average: 2.3358
+MAE		| LightGBM: 0.56415		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.24655		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.68118		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.46426		Weighted Average: 0.45986
+MSE		| LightGBM: 10.138		Weighted Average: 8.1637
+MAE		| LightGBM: 0.68207		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.25595		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.70896		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41833		Weighted Average: 0.45045
+MSE		| LightGBM: 6.0151		Weighted Average: 4.4464
+MAE		| LightGBM: 0.64285		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.26844		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.67827		Weighted Average: 0.70908
+
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.4054
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.4054, Overall MSE: 4.1736, Overall MAE: 0.63172, Overall MAPE: 0.26297, Overall Weighted MAPE: 0.68014
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'regression', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: []
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37032		Weighted Average: 0.37404
+MSE		| LightGBM: 2.4012		Weighted Average: 2.1002
+MAE		| LightGBM: 0.59628		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.25688		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.69026		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45901		Weighted Average: 0.44448
+MSE		| LightGBM: 3.4145		Weighted Average: 2.883
+MAE		| LightGBM: 0.69492		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.26645		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.64979		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.44309		Weighted Average: 0.44832
+MSE		| LightGBM: 4.3237		Weighted Average: 3.7668
+MAE		| LightGBM: 0.6828		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.2992		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.69219		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.37111		Weighted Average: 0.37758
+MSE		| LightGBM: 2.7888		Weighted Average: 2.5425
+MAE		| LightGBM: 0.59979		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.26211		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.68065		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.40499		Weighted Average: 0.39935
+MSE		| LightGBM: 3.8159		Weighted Average: 3.0682
+MAE		| LightGBM: 0.6319		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.25902		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.67153		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.37858		Weighted Average: 0.38004
+MSE		| LightGBM: 3.0887		Weighted Average: 2.5966
+MAE		| LightGBM: 0.6005		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.25583		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.66927		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34959		Weighted Average: 0.35516
+MSE		| LightGBM: 2.7897		Weighted Average: 2.3358
+MAE		| LightGBM: 0.56415		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.24655		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.68118		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.46426		Weighted Average: 0.45986
+MSE		| LightGBM: 10.138		Weighted Average: 8.1637
+MAE		| LightGBM: 0.68207		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.25595		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.70896		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41833		Weighted Average: 0.45045
+MSE		| LightGBM: 6.0151		Weighted Average: 4.4464
+MAE		| LightGBM: 0.64285		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.26844		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.67827		Weighted Average: 0.70908
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.41461
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.41461, Overall MSE: 3.9911, Overall MAE: 0.65097, Overall MAPE: 0.29174, Overall Weighted MAPE: 0.70087
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'regression', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9' 'lag_9_min'
+ 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum' 'lag_9_var' 'lag_14'
+ 'lag_14_min' 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum'
+ 'lag_14_var' 'lag_21' 'lag_21_min' 'lag_21_max' 'lag_21_mean'
+ 'lag_21_median' 'lag_21_sum' 'lag_21_var' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod' 'product_id']
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37563		Weighted Average: 0.37404
+MSE		| LightGBM: 2.4533		Weighted Average: 2.1002
+MAE		| LightGBM: 0.60876		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.27984		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.70471		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45954		Weighted Average: 0.44448
+MSE		| LightGBM: 3.3092		Weighted Average: 2.883
+MAE		| LightGBM: 0.70425		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.29098		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.65852		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.45853		Weighted Average: 0.44832
+MSE		| LightGBM: 4.4175		Weighted Average: 3.7668
+MAE		| LightGBM: 0.7047		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.32461		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.71439		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.38032		Weighted Average: 0.37758
+MSE		| LightGBM: 2.7854		Weighted Average: 2.5425
+MAE		| LightGBM: 0.62044		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.29218		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.7041		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.4115		Weighted Average: 0.39935
+MSE		| LightGBM: 3.5981		Weighted Average: 3.0682
+MAE		| LightGBM: 0.64718		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.28851		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.68777		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.38851		Weighted Average: 0.38004
+MSE		| LightGBM: 3.1031		Weighted Average: 2.5966
+MAE		| LightGBM: 0.63076		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.29568		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.703		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.35898		Weighted Average: 0.35516
+MSE		| LightGBM: 2.6214		Weighted Average: 2.3358
+MAE		| LightGBM: 0.58249		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.27528		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.70333		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.47826		Weighted Average: 0.45986
+MSE		| LightGBM: 9.5251		Weighted Average: 8.1637
+MAE		| LightGBM: 0.70546		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.28454		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.73328		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.43692		Weighted Average: 0.45045
+MSE		| LightGBM: 4.2848		Weighted Average: 4.4464
+MAE		| LightGBM: 0.66834		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.29846		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.70517		Weighted Average: 0.70908
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.41388
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.41388, Overall MSE: 3.9571, Overall MAE: 0.65152, Overall MAPE: 0.29326, Overall Weighted MAPE: 0.70145
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'regression', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9' 'lag_9_min'
+ 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum' 'lag_9_var' 'lag_14'
+ 'lag_14_min' 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum'
+ 'lag_14_var' 'lag_21' 'lag_21_min' 'lag_21_max' 'lag_21_mean'
+ 'lag_21_median' 'lag_21_sum' 'lag_21_var' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37497		Weighted Average: 0.37404
+MSE		| LightGBM: 2.4076		Weighted Average: 2.1002
+MAE		| LightGBM: 0.6068		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.27931		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.70245		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45805		Weighted Average: 0.44448
+MSE		| LightGBM: 3.2605		Weighted Average: 2.883
+MAE		| LightGBM: 0.70184		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.29017		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.65626		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.45644		Weighted Average: 0.44832
+MSE		| LightGBM: 4.4315		Weighted Average: 3.7668
+MAE		| LightGBM: 0.70551		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.32587		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.71521		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.3783		Weighted Average: 0.37758
+MSE		| LightGBM: 2.727		Weighted Average: 2.5425
+MAE		| LightGBM: 0.62431		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.29791		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.70848		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.41058		Weighted Average: 0.39935
+MSE		| LightGBM: 3.6063		Weighted Average: 3.0682
+MAE		| LightGBM: 0.64658		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.28615		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.68712		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.38767		Weighted Average: 0.38004
+MSE		| LightGBM: 3.0004		Weighted Average: 2.5966
+MAE		| LightGBM: 0.6283		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.29353		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.70025		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.35949		Weighted Average: 0.35516
+MSE		| LightGBM: 2.6151		Weighted Average: 2.3358
+MAE		| LightGBM: 0.5866		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.27946		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.70828		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.4784		Weighted Average: 0.45986
+MSE		| LightGBM: 9.3481		Weighted Average: 8.1637
+MAE		| LightGBM: 0.70649		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.28996		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.73435		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.44059		Weighted Average: 0.45045
+MSE		| LightGBM: 4.6863		Weighted Average: 4.4464
+MAE		| LightGBM: 0.67432		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.30375		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.71148		Weighted Average: 0.70908
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.41278
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.41278, Overall MSE: 3.9545, Overall MAE: 0.64965, Overall MAPE: 0.29158, Overall Weighted MAPE: 0.69945
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'rmse', 'metric': 'rmse', 'learning_rate': 0.01, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9' 'lag_9_min'
+ 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum' 'lag_9_var' 'lag_14'
+ 'lag_14_min' 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum'
+ 'lag_14_var' 'lag_21' 'lag_21_min' 'lag_21_max' 'lag_21_mean'
+ 'lag_21_median' 'lag_21_sum' 'lag_21_var' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37456		Weighted Average: 0.37404
+MSE		| LightGBM: 2.4217		Weighted Average: 2.1002
+MAE		| LightGBM: 0.60959		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.28022		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.70567		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45806		Weighted Average: 0.44448
+MSE		| LightGBM: 3.3154		Weighted Average: 2.883
+MAE		| LightGBM: 0.70185		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.28836		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.65627		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.45467		Weighted Average: 0.44832
+MSE		| LightGBM: 4.3161		Weighted Average: 3.7668
+MAE		| LightGBM: 0.70218		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.32501		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.71184		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.37745		Weighted Average: 0.37758
+MSE		| LightGBM: 2.708		Weighted Average: 2.5425
+MAE		| LightGBM: 0.61957		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.29388		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.7031		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.4095		Weighted Average: 0.39935
+MSE		| LightGBM: 3.5599		Weighted Average: 3.0682
+MAE		| LightGBM: 0.64548		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.28797		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.68596		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.38803		Weighted Average: 0.38004
+MSE		| LightGBM: 3.0824		Weighted Average: 2.5966
+MAE		| LightGBM: 0.62613		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.29195		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.69783		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.35842		Weighted Average: 0.35516
+MSE		| LightGBM: 2.6303		Weighted Average: 2.3358
+MAE		| LightGBM: 0.5851		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.2787		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.70648		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.47517		Weighted Average: 0.45986
+MSE		| LightGBM: 9.3213		Weighted Average: 8.1637
+MAE		| LightGBM: 0.7024		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.28433		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.7301		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.43754		Weighted Average: 0.45045
+MSE		| LightGBM: 4.7554		Weighted Average: 4.4464
+MAE		| LightGBM: 0.6704		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.29773		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.70734		Weighted Average: 0.70908
+[----------------------------------------------------------------------------------------------------------]
+Model ID: ALL_PRODUCTS_LESS_FEATURES_Huber_0.41278
+Test Range: from 2018-04-23 to 2018-12-11
+LGBM
+Overall Huber: 0.41278, Overall MSE: 3.9545, Overall MAE: 0.64965, Overall MAPE: 0.29158, Overall Weighted MAPE: 0.69945
+WA
+Overall Huber: 0.40648, Overall MSE: 3.4745, Overall MAE: 0.63368, Overall MAPE: 0.28797, Overall Weighted MAPE: 0.68225
+Parameters: {'nthread': -1, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9' 'lag_9_min'
+ 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum' 'lag_9_var' 'lag_14'
+ 'lag_14_min' 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum'
+ 'lag_14_var' 'lag_21' 'lag_21_min' 'lag_21_max' 'lag_21_mean'
+ 'lag_21_median' 'lag_21_sum' 'lag_21_var' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+Fold 0 from 2018-04-23 to 2018-05-21
+Huber	| LightGBM: 0.37456		Weighted Average: 0.37404
+MSE		| LightGBM: 2.4217		Weighted Average: 2.1002
+MAE		| LightGBM: 0.60959		Weighted Average: 0.60265
+MAPE	| LightGBM: 0.28022		Weighted Average: 0.28414
+WMAPE	| LightGBM: 0.70567		Weighted Average: 0.69764
+Fold 1 from 2018-05-21 to 2018-06-18
+Huber	| LightGBM: 0.45806		Weighted Average: 0.44448
+MSE		| LightGBM: 3.3154		Weighted Average: 2.883
+MAE		| LightGBM: 0.70185		Weighted Average: 0.68497
+MAPE	| LightGBM: 0.28836		Weighted Average: 0.2973
+WMAPE	| LightGBM: 0.65627		Weighted Average: 0.64048
+Fold 2 from 2018-06-18 to 2018-07-16
+Huber	| LightGBM: 0.45467		Weighted Average: 0.44832
+MSE		| LightGBM: 4.3161		Weighted Average: 3.7668
+MAE		| LightGBM: 0.70218		Weighted Average: 0.68829
+MAPE	| LightGBM: 0.32501		Weighted Average: 0.32412
+WMAPE	| LightGBM: 0.71184		Weighted Average: 0.69776
+Fold 3 from 2018-07-16 to 2018-08-13
+Huber	| LightGBM: 0.37745		Weighted Average: 0.37758
+MSE		| LightGBM: 2.708		Weighted Average: 2.5425
+MAE		| LightGBM: 0.61957		Weighted Average: 0.60667
+MAPE	| LightGBM: 0.29388		Weighted Average: 0.28866
+WMAPE	| LightGBM: 0.7031		Weighted Average: 0.68846
+Fold 4 from 2018-08-13 to 2018-09-10
+Huber	| LightGBM: 0.4095		Weighted Average: 0.39935
+MSE		| LightGBM: 3.5599		Weighted Average: 3.0682
+MAE		| LightGBM: 0.64548		Weighted Average: 0.62771
+MAPE	| LightGBM: 0.28797		Weighted Average: 0.28422
+WMAPE	| LightGBM: 0.68596		Weighted Average: 0.66707
+Fold 5 from 2018-09-10 to 2018-10-07
+Huber	| LightGBM: 0.38803		Weighted Average: 0.38004
+MSE		| LightGBM: 3.0824		Weighted Average: 2.5966
+MAE		| LightGBM: 0.62613		Weighted Average: 0.60418
+MAPE	| LightGBM: 0.29195		Weighted Average: 0.28291
+WMAPE	| LightGBM: 0.69783		Weighted Average: 0.67338
+Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.35842		Weighted Average: 0.35516
+MSE		| LightGBM: 2.6303		Weighted Average: 2.3358
+MAE		| LightGBM: 0.5851		Weighted Average: 0.57068
+MAPE	| LightGBM: 0.2787		Weighted Average: 0.27036
+WMAPE	| LightGBM: 0.70648		Weighted Average: 0.68907
+Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.47517		Weighted Average: 0.45986
+MSE		| LightGBM: 9.3213		Weighted Average: 8.1637
+MAE		| LightGBM: 0.7024		Weighted Average: 0.67348
+MAPE	| LightGBM: 0.28433		Weighted Average: 0.26995
+WMAPE	| LightGBM: 0.7301		Weighted Average: 0.70004
+Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.43754		Weighted Average: 0.45045
+MSE		| LightGBM: 4.7554		Weighted Average: 4.4464
+MAE		| LightGBM: 0.6704		Weighted Average: 0.67205
+MAPE	| LightGBM: 0.29773		Weighted Average: 0.29508
+WMAPE	| LightGBM: 0.70734		Weighted Average: 0.70908
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_Huber_0.39065
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39065, Overall MSE: 4.3451, Overall MAE: 0.6172, Overall MAPE: 0.2634, Overall Weighted MAPE: 0.68033
+[+] WA
+Overall Huber: 0.39311, Overall MSE: 3.6778, Overall MAE: 0.62082, Overall MAPE: 0.28948, Overall Weighted MAPE: 0.68432
+[+] Parameters: {'nthread': 24, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+[+] Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max'
+ 'lag_7_mean' 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min'
+ 'lag_8_max' 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9'
+ 'lag_9_min' 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum'
+ 'lag_9_var' 'lag_14' 'lag_14_min' 'lag_14_max' 'lag_14_mean'
+ 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'productid_count_lag_7'
+ 'productid_count_lag_7_min' 'productid_count_lag_7_max'
+ 'productid_count_lag_7_median' 'productid_count_lag_7_sum'
+ 'productid_count_lag_8' 'productid_count_lag_8_min'
+ 'productid_count_lag_8_max' 'productid_count_lag_8_median'
+ 'productid_count_lag_8_sum' 'productid_count_lag_9'
+ 'productid_count_lag_9_min' 'productid_count_lag_9_max'
+ 'productid_count_lag_9_median' 'productid_count_lag_9_sum'
+ 'productid_count_lag_14' 'productid_count_lag_14_min'
+ 'productid_count_lag_14_max' 'productid_count_lag_14_median'
+ 'productid_count_lag_14_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.3631		Weighted Average: 0.373
+MSE		| LightGBM: 2.141		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58837		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25822		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.6971		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44551		Weighted Average: 0.43642
+MSE		| LightGBM: 5.336		Weighted Average: 4.3089
+MAE		| LightGBM: 0.68115		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.2702		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66786		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.4475		Weighted Average: 0.45216
+MSE		| LightGBM: 4.8938		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68742		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29745		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.69297		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.3827		Weighted Average: 0.39416
+MSE		| LightGBM: 8.5578		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60951		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.26144		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68875		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38931		Weighted Average: 0.38409
+MSE		| LightGBM: 3.2606		Weighted Average: 2.619
+MAE		| LightGBM: 0.61449		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25601		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.66332		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36702		Weighted Average: 0.37105
+MSE		| LightGBM: 2.952		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58701		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.25381		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66927		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34169		Weighted Average: 0.34269
+MSE		| LightGBM: 3.2447		Weighted Average: 2.3888
+MAE		| LightGBM: 0.5551		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.24711		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.68477		Weighted Average: 0.68461
+[+] Fold 7 from 2018-10-07 to 2018-11-22
+Huber	| LightGBM: 0.047835	Weighted Average: 0.073544
+MSE		| LightGBM: 0.095669	Weighted Average: 0.14709
+MAE		| LightGBM: 0.20367		Weighted Average: 0.26674
+MAPE	| LightGBM: 0.16212		Weighted Average: 0.2347
+WMAPE	| LightGBM: 1.4936		Weighted Average: 1.9561
+[+] Fold 8 from 2018-11-23 to 2018-12-11
+Huber	| LightGBM: 0.3605		Weighted Average: 0.38081
+MSE		| LightGBM: 1.1137		Weighted Average: 1.0978
+MAE		| LightGBM: 0.5825		Weighted Average: 0.69888
+MAPE	| LightGBM: 0.2566		Weighted Average: 0.40573
+WMAPE	| LightGBM: 0.99857		Weighted Average: 1.1981
+[+] Product Group Metrics
+Products in OOS group: 493, products in Promo group: 105, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.2096 0.2239 
+ MSE: 24.396 20.972 
+ MAE: 0.3125 0.32757 
+ MAPE: 0.11555 0.13292 
+ wMAPE: 0.89341 0.9365
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.3274 1.2451 
+ MSE: 25.778 19.118 
+ MAE: 1.6789 1.601 
+ MAPE: 0.44253 0.48983 
+ wMAPE: 0.54866 0.52318
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16627 0.16863 
+ MSE: 0.67088 0.63973 
+ MAE: 0.33107 0.32519 
+ MAPE: 0.18517 0.18743 
+ wMAPE: 0.89888 0.88293
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 2K_EXPERIMENT_Huber_0.4089
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.4089, Overall MSE: 7.5935, Overall MAE: 0.63122, Overall MAPE: 0.25926, Overall Weighted MAPE: 0.68572
+[+] WA
+Overall Huber: 0.41147, Overall MSE: 6.4865, Overall MAE: 0.63412, Overall MAPE: 0.28234, Overall Weighted MAPE: 0.68888
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.7, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 3.0, 'reg_lambda': 3.0, 'verbose': -1}
+[+] Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max'
+ 'lag_7_mean' 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min'
+ 'lag_8_max' 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9'
+ 'lag_9_min' 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum'
+ 'lag_9_var' 'lag_14' 'lag_14_min' 'lag_14_max' 'lag_14_mean'
+ 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'productid_count_lag_7'
+ 'productid_count_lag_7_min' 'productid_count_lag_7_max'
+ 'productid_count_lag_7_median' 'productid_count_lag_7_sum'
+ 'productid_count_lag_8' 'productid_count_lag_8_min'
+ 'productid_count_lag_8_max' 'productid_count_lag_8_median'
+ 'productid_count_lag_8_sum' 'productid_count_lag_9'
+ 'productid_count_lag_9_min' 'productid_count_lag_9_max'
+ 'productid_count_lag_9_median' 'productid_count_lag_9_sum'
+ 'productid_count_lag_14' 'productid_count_lag_14_min'
+ 'productid_count_lag_14_max' 'productid_count_lag_14_median'
+ 'productid_count_lag_14_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual__abs_energy'
+ 'actual__absolute_sum_of_changes'
+ 'actual__agg_autocorrelation__f_agg_"mean"'
+ 'actual__agg_autocorrelation__f_agg_"median"'
+ 'actual__agg_autocorrelation__f_agg_"var"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_10__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_10__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_10__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_10__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_50__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_50__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_50__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_50__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_5__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_5__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_5__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"max"__chunk_len_5__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_10__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_10__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_10__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_10__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_50__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_50__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_50__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_50__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_5__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_5__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_5__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"mean"__chunk_len_5__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_10__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_10__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_10__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_10__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_50__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_50__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_50__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_50__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_5__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_5__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_5__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"min"__chunk_len_5__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_10__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_10__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_10__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_10__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_50__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_50__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_50__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_50__attr_"stderr"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_5__attr_"intercept"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_5__attr_"rvalue"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_5__attr_"slope"'
+ 'actual__agg_linear_trend__f_agg_"var"__chunk_len_5__attr_"stderr"'
+ 'actual__ar_coefficient__k_10__coeff_0'
+ 'actual__ar_coefficient__k_10__coeff_1'
+ 'actual__ar_coefficient__k_10__coeff_2'
+ 'actual__ar_coefficient__k_10__coeff_3'
+ 'actual__ar_coefficient__k_10__coeff_4'
+ 'actual__augmented_dickey_fuller__attr_"pvalue"'
+ 'actual__augmented_dickey_fuller__attr_"teststat"'
+ 'actual__augmented_dickey_fuller__attr_"usedlag"'
+ 'actual__autocorrelation__lag_0' 'actual__autocorrelation__lag_1'
+ 'actual__autocorrelation__lag_2' 'actual__autocorrelation__lag_3'
+ 'actual__autocorrelation__lag_4' 'actual__autocorrelation__lag_5'
+ 'actual__autocorrelation__lag_6' 'actual__autocorrelation__lag_7'
+ 'actual__autocorrelation__lag_8' 'actual__autocorrelation__lag_9'
+ 'actual__binned_entropy__max_bins_10' 'actual__c3__lag_1'
+ 'actual__c3__lag_2' 'actual__c3__lag_3'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.2__ql_0.0'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.2__ql_0.2'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.2__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.2__ql_0.8'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.4__ql_0.0'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.4__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.6__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.8__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_0.8__ql_0.6'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_1.0__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_1.0__ql_0.6'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_False__qh_1.0__ql_0.8'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.2__ql_0.0'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.2__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.2__ql_0.8'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.4__ql_0.0'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.4__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.6__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.6__ql_0.6'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.8__ql_0.4'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_0.8__ql_0.6'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_1.0__ql_0.0'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_1.0__ql_0.6'
+ 'actual__change_quantiles__f_agg_"mean"__isabs_True__qh_1.0__ql_0.8'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.2__ql_0.0'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.2__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.2__ql_0.8'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.4__ql_0.0'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.4__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.6__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.6__ql_0.6'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.8__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_0.8__ql_0.6'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_1.0__ql_0.0'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_1.0__ql_0.6'
+ 'actual__change_quantiles__f_agg_"var"__isabs_False__qh_1.0__ql_0.8'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.2__ql_0.0'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.2__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.2__ql_0.8'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.4__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.6__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.6__ql_0.6'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.8__ql_0.4'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.8__ql_0.6'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_0.8__ql_0.8'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_1.0__ql_0.0'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_1.0__ql_0.6'
+ 'actual__change_quantiles__f_agg_"var"__isabs_True__qh_1.0__ql_0.8'
+ 'actual__cid_ce__normalize_False' 'actual__cid_ce__normalize_True'
+ 'actual__count_above_mean' 'actual__count_below_mean'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_0__w_10'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_0__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_0__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_0__w_5'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_12__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_13__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_13__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_14__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_14__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_1__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_1__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_2__w_10'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_2__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_2__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_2__w_5'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_3__w_10'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_3__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_3__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_3__w_5'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_4__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_4__w_5'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_6__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_7__w_10'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_7__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_7__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_7__w_5'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_8__w_2'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_8__w_20'
+ 'actual__cwt_coefficients__widths_(2, 5, 10, 20)__coeff_9__w_2'
+ 'actual__energy_ratio_by_chunks__num_segments_10__segment_focus_0'
+ 'actual__energy_ratio_by_chunks__num_segments_10__segment_focus_1'
+ 'actual__energy_ratio_by_chunks__num_segments_10__segment_focus_3'
+ 'actual__energy_ratio_by_chunks__num_segments_10__segment_focus_5'
+ 'actual__energy_ratio_by_chunks__num_segments_10__segment_focus_9'
+ 'actual__fft_aggregated__aggtype_"centroid"'
+ 'actual__fft_aggregated__aggtype_"kurtosis"'
+ 'actual__fft_aggregated__aggtype_"skew"'
+ 'actual__fft_aggregated__aggtype_"variance"'
+ 'actual__fft_coefficient__coeff_0__attr_"abs"'
+ 'actual__fft_coefficient__coeff_0__attr_"angle"'
+ 'actual__fft_coefficient__coeff_0__attr_"imag"'
+ 'actual__fft_coefficient__coeff_0__attr_"real"'
+ 'actual__fft_coefficient__coeff_1__attr_"abs"'
+ 'actual__fft_coefficient__coeff_1__attr_"angle"'
+ 'actual__fft_coefficient__coeff_1__attr_"imag"'
+ 'actual__fft_coefficient__coeff_1__attr_"real"'
+ 'actual__fft_coefficient__coeff_25__attr_"abs"'
+ 'actual__fft_coefficient__coeff_25__attr_"angle"'
+ 'actual__fft_coefficient__coeff_25__attr_"imag"'
+ 'actual__fft_coefficient__coeff_25__attr_"real"'
+ 'actual__fft_coefficient__coeff_50__attr_"abs"'
+ 'actual__fft_coefficient__coeff_50__attr_"angle"'
+ 'actual__fft_coefficient__coeff_50__attr_"imag"'
+ 'actual__fft_coefficient__coeff_50__attr_"real"'
+ 'actual__fft_coefficient__coeff_75__attr_"abs"'
+ 'actual__fft_coefficient__coeff_75__attr_"angle"'
+ 'actual__fft_coefficient__coeff_75__attr_"imag"'
+ 'actual__fft_coefficient__coeff_75__attr_"real"'
+ 'actual__fft_coefficient__coeff_99__attr_"abs"'
+ 'actual__fft_coefficient__coeff_99__attr_"angle"'
+ 'actual__fft_coefficient__coeff_99__attr_"imag"'
+ 'actual__fft_coefficient__coeff_99__attr_"real"'
+ 'actual__first_location_of_maximum' 'actual__first_location_of_minimum'
+ 'actual__friedrich_coefficients__m_3__r_30__coeff_0'
+ 'actual__friedrich_coefficients__m_3__r_30__coeff_1'
+ 'actual__friedrich_coefficients__m_3__r_30__coeff_2'
+ 'actual__friedrich_coefficients__m_3__r_30__coeff_3'
+ 'actual__has_duplicate_max' 'actual__has_duplicate_min'
+ 'actual__index_mass_quantile__q_0.1' 'actual__index_mass_quantile__q_0.2'
+ 'actual__index_mass_quantile__q_0.3' 'actual__index_mass_quantile__q_0.4'
+ 'actual__index_mass_quantile__q_0.6' 'actual__index_mass_quantile__q_0.7'
+ 'actual__index_mass_quantile__q_0.8' 'actual__index_mass_quantile__q_0.9'
+ 'actual__kurtosis' 'actual__large_standard_deviation__r_0.05'
+ 'actual__large_standard_deviation__r_0.25'
+ 'actual__large_standard_deviation__r_0.5'
+ 'actual__large_standard_deviation__r_0.75'
+ 'actual__large_standard_deviation__r_0.9500000000000001'
+ 'actual__last_location_of_maximum' 'actual__last_location_of_minimum'
+ 'actual__length' 'actual__linear_trend__attr_"intercept"'
+ 'actual__linear_trend__attr_"pvalue"'
+ 'actual__linear_trend__attr_"rvalue"'
+ 'actual__linear_trend__attr_"slope"'
+ 'actual__linear_trend__attr_"stderr"' 'actual__longest_strike_above_mean'
+ 'actual__longest_strike_below_mean'
+ 'actual__max_langevin_fixed_point__m_3__r_30' 'actual__mean'
+ 'actual__mean_abs_change' 'actual__mean_change'
+ 'actual__mean_second_derivative_central'
+ 'actual__number_crossing_m__m_-1' 'actual__number_crossing_m__m_0'
+ 'actual__number_crossing_m__m_1' 'actual__number_cwt_peaks__n_1'
+ 'actual__number_cwt_peaks__n_5' 'actual__number_peaks__n_1'
+ 'actual__number_peaks__n_10' 'actual__number_peaks__n_3'
+ 'actual__number_peaks__n_5' 'actual__number_peaks__n_50'
+ 'actual__partial_autocorrelation__lag_0'
+ 'actual__partial_autocorrelation__lag_1'
+ 'actual__partial_autocorrelation__lag_2'
+ 'actual__partial_autocorrelation__lag_3'
+ 'actual__partial_autocorrelation__lag_4'
+ 'actual__partial_autocorrelation__lag_5'
+ 'actual__partial_autocorrelation__lag_6'
+ 'actual__partial_autocorrelation__lag_7'
+ 'actual__partial_autocorrelation__lag_8'
+ 'actual__partial_autocorrelation__lag_9'
+ 'actual__percentage_of_reoccurring_datapoints_to_all_datapoints'
+ 'actual__percentage_of_reoccurring_values_to_all_values'
+ 'actual__quantile__q_0.1' 'actual__quantile__q_0.2'
+ 'actual__quantile__q_0.3' 'actual__quantile__q_0.4'
+ 'actual__quantile__q_0.6' 'actual__quantile__q_0.7'
+ 'actual__quantile__q_0.8' 'actual__quantile__q_0.9'
+ 'actual__range_count__max_1__min_-1'
+ 'actual__ratio_beyond_r_sigma__r_0.5' 'actual__ratio_beyond_r_sigma__r_1'
+ 'actual__ratio_beyond_r_sigma__r_10' 'actual__ratio_beyond_r_sigma__r_2'
+ 'actual__ratio_beyond_r_sigma__r_3' 'actual__ratio_beyond_r_sigma__r_7'
+ 'actual__ratio_value_number_to_time_series_length' 'actual__skewness'
+ 'actual__spkt_welch_density__coeff_2'
+ 'actual__spkt_welch_density__coeff_5'
+ 'actual__spkt_welch_density__coeff_8' 'actual__standard_deviation'
+ 'actual__sum_of_reoccurring_data_points'
+ 'actual__sum_of_reoccurring_values' 'actual__sum_values'
+ 'actual__symmetry_looking__r_0.0' 'actual__symmetry_looking__r_0.05'
+ 'actual__symmetry_looking__r_0.1' 'actual__symmetry_looking__r_0.2'
+ 'actual__symmetry_looking__r_0.25' 'actual__symmetry_looking__r_0.5'
+ 'actual__symmetry_looking__r_0.75' 'actual__symmetry_looking__r_0.9'
+ 'actual__time_reversal_asymmetry_statistic__lag_1'
+ 'actual__time_reversal_asymmetry_statistic__lag_2'
+ 'actual__time_reversal_asymmetry_statistic__lag_3'
+ 'actual__value_count__value_-inf' 'actual__value_count__value_0'
+ 'actual__value_count__value_1' 'actual__value_count__value_inf'
+ 'actual__value_count__value_nan' 'actual__variance'
+ 'actual__variance_larger_than_standard_deviation' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36651		Weighted Average: 0.3777
+MSE		| LightGBM: 2.1682		Weighted Average: 2.1805
+MAE		| LightGBM: 0.58977		Weighted Average: 0.60539
+MAPE	| LightGBM: 0.25424		Weighted Average: 0.28399
+WMAPE	| LightGBM: 0.69171		Weighted Average: 0.71003
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.47943		Weighted Average: 0.47114
+MSE		| LightGBM: 12.025		Weighted Average: 9.3774
+MAE		| LightGBM: 0.71188		Weighted Average: 0.70814
+MAPE	| LightGBM: 0.26781		Weighted Average: 0.29448
+WMAPE	| LightGBM: 0.67581		Weighted Average: 0.67226
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.45439		Weighted Average: 0.45922
+MSE		| LightGBM: 5.6316		Weighted Average: 4.5692
+MAE		| LightGBM: 0.69156		Weighted Average: 0.69614
+MAPE	| LightGBM: 0.29477		Weighted Average: 0.32053
+WMAPE	| LightGBM: 0.69483		Weighted Average: 0.69943
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.42823		Weighted Average: 0.44622
+MSE		| LightGBM: 26.945		Weighted Average: 23.929
+MAE		| LightGBM: 0.65004		Weighted Average: 0.66957
+MAPE	| LightGBM: 0.25853		Weighted Average: 0.28976
+WMAPE	| LightGBM: 0.71009		Weighted Average: 0.73142
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.40296		Weighted Average: 0.39316
+MSE		| LightGBM: 3.7501		Weighted Average: 2.8247
+MAE		| LightGBM: 0.62482		Weighted Average: 0.61704
+MAPE	| LightGBM: 0.25117		Weighted Average: 0.27514
+WMAPE	| LightGBM: 0.65973		Weighted Average: 0.65152
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.38063		Weighted Average: 0.3762
+MSE		| LightGBM: 3.1815		Weighted Average: 2.4716
+MAE		| LightGBM: 0.59667		Weighted Average: 0.59318
+MAPE	| LightGBM: 0.24922		Weighted Average: 0.27319
+WMAPE	| LightGBM: 0.67661		Weighted Average: 0.67265
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.32554		Weighted Average: 0.33019
+MSE		| LightGBM: 1.8817		Weighted Average: 1.772
+MAE		| LightGBM: 0.53696		Weighted Average: 0.54031
+MAPE	| LightGBM: 0.24368		Weighted Average: 0.26165
+WMAPE	| LightGBM: 0.68734		Weighted Average: 0.69163
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.44048		Weighted Average: 0.43372
+MSE		| LightGBM: 6.5236		Weighted Average: 5.6449
+MAE		| LightGBM: 0.65557		Weighted Average: 0.64151
+MAPE	| LightGBM: 0.25447		Weighted Average: 0.26059
+WMAPE	| LightGBM: 0.70162		Weighted Average: 0.68657
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.39221		Weighted Average: 0.42738
+MSE		| LightGBM: 2.8894		Weighted Average: 3.2323
+MAE		| LightGBM: 0.61353		Weighted Average: 0.64337
+MAPE	| LightGBM: 0.26056		Weighted Average: 0.28097
+WMAPE	| LightGBM: 0.65364		Weighted Average: 0.68543
+[+] Product Group Metrics
+Products in OOS group: 124, products in Promo group: 25, Products in Normal group: 315
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.4954 0.53257 
+ MSE: 83.086 69.408 
+ MAE: 0.60846 0.64644 
+ MAPE: 0.13279 0.17019 
+ wMAPE: 0.8406 0.89307
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.1939 1.0894 
+ MSE: 15.101 11.445 
+ MAE: 1.5378 1.4338 
+ MAPE: 0.41721 0.45348 
+ wMAPE: 0.54602 0.50908
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.13171 0.13182 
+ MSE: 0.52052 0.47034 
+ MAE: 0.27591 0.26904 
+ MAPE: 0.16038 0.16119 
+ wMAPE: 0.98376 0.95926
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_2_Huber_0.39914
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39914, Overall MSE: 5.4978, Overall MAE: 0.62505, Overall MAPE: 0.26314, Overall Weighted MAPE: 0.68356
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.12, 'max_depth': -1, 'min_data_in_leaf': 3, 'num_leaves': 48, 'feature_fraction': 0.8, 'subsample': 0.8, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 3.0, 'reg_lambda': 3.0, 'verbose': -1}
+[+] Features: ['product_id' 'year' 'month' 'weekday' 'dayofmonth' 'weekofyear'
+ 'dayofyear' 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max'
+ 'lag_7_mean' 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min'
+ 'lag_8_max' 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9'
+ 'lag_9_min' 'lag_9_max' 'lag_9_mean' 'lag_9_median' 'lag_9_sum'
+ 'lag_9_var' 'lag_14' 'lag_14_min' 'lag_14_max' 'lag_14_mean'
+ 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'productid_count_lag_7'
+ 'productid_count_lag_7_min' 'productid_count_lag_7_max'
+ 'productid_count_lag_7_median' 'productid_count_lag_7_sum'
+ 'productid_count_lag_8' 'productid_count_lag_8_min'
+ 'productid_count_lag_8_max' 'productid_count_lag_8_median'
+ 'productid_count_lag_8_sum' 'productid_count_lag_9'
+ 'productid_count_lag_9_min' 'productid_count_lag_9_max'
+ 'productid_count_lag_9_median' 'productid_count_lag_9_sum'
+ 'productid_count_lag_14' 'productid_count_lag_14_min'
+ 'productid_count_lag_14_max' 'productid_count_lag_14_median'
+ 'productid_count_lag_14_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_mean' 'actual_weekday_median'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36282		Weighted Average: 0.373
+MSE		| LightGBM: 2.1572		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58875		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25874		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69755		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44496		Weighted Average: 0.43642
+MSE		| LightGBM: 5.329		Weighted Average: 4.3089
+MAE		| LightGBM: 0.68004		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26921		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66677		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.44613		Weighted Average: 0.45216
+MSE		| LightGBM: 4.8523		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68608		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29682		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.69162		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.38206		Weighted Average: 0.39416
+MSE		| LightGBM: 8.5942		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60891		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.26134		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68807		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38842		Weighted Average: 0.38409
+MSE		| LightGBM: 3.2498		Weighted Average: 2.619
+MAE		| LightGBM: 0.61402		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25614		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.66282		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36597		Weighted Average: 0.37105
+MSE		| LightGBM: 2.8783		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58668		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.25445		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.6689		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34159		Weighted Average: 0.34269
+MSE		| LightGBM: 3.3814		Weighted Average: 2.3888
+MAE		| LightGBM: 0.55536		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.24659		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.6851		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45546		Weighted Average: 0.44918
+MSE		| LightGBM: 12.834		Weighted Average: 10.171
+MAE		| LightGBM: 0.67501		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25925		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.70924		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.4223		Weighted Average: 0.44217
+MSE		| LightGBM: 7.4152		Weighted Average: 4.3178
+MAE		| LightGBM: 0.64873		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.27225		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.68071		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18614 0.19853 
+ MSE: 20.704 17.717 
+ MAE: 0.28678 0.29772 
+ MAPE: 0.11244 0.1253 
+ wMAPE: 0.91388 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.2935 1.2259 
+ MSE: 24.657 18.825 
+ MAE: 1.6442 1.5782 
+ MAPE: 0.4467 0.48899 
+ wMAPE: 0.55396 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16112 0.16308 
+ MSE: 0.65717 0.6252 
+ MAE: 0.32305 0.31469 
+ MAPE: 0.18193 0.18133 
+ wMAPE: 0.91209 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_leaves32_sub1_bin255reg2_Huber_0.39857
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39857, Overall MSE: 5.4558, Overall MAE: 0.62246, Overall MAPE: 0.25923, Overall Weighted MAPE: 0.68073
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.12, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 32, 'feature_fraction': 0.8, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 2.0, 'reg_lambda': 2.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear'
+ 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'product_type_id' 'brand_id' 'product_group_id'
+ 'subproduct_type_id' 'actual_full_mean' 'actual_full_median'
+ 'actual_full_var' 'actual_weekday_max' 'actual_weekday_median'
+ 'actual_weekday_mean' 'full_mean_lag_7_median_prod'
+ 'full_mean_lag_7_mean_prod' 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36296		Weighted Average: 0.373
+MSE		| LightGBM: 2.1378		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58717		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25544		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69568		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44434		Weighted Average: 0.43642
+MSE		| LightGBM: 5.3493		Weighted Average: 4.3089
+MAE		| LightGBM: 0.67848		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26627		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66523		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.4466		Weighted Average: 0.45216
+MSE		| LightGBM: 4.8891		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68321		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29163		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.68873		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.38133		Weighted Average: 0.39416
+MSE		| LightGBM: 8.5886		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60592		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.25669		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.6847		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38742		Weighted Average: 0.38409
+MSE		| LightGBM: 3.2142		Weighted Average: 2.619
+MAE		| LightGBM: 0.61134		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25282		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.65992		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36546		Weighted Average: 0.37105
+MSE		| LightGBM: 2.8814		Weighted Average: 2.4744
+MAE		| LightGBM: 0.5828		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24893		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66447		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34058		Weighted Average: 0.34269
+MSE		| LightGBM: 3.2611		Weighted Average: 2.3888
+MAE		| LightGBM: 0.55259		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.24338		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.68168		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45464		Weighted Average: 0.44918
+MSE		| LightGBM: 12.783		Weighted Average: 10.171
+MAE		| LightGBM: 0.67296		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25573		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.70709		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.42007		Weighted Average: 0.44217
+MSE		| LightGBM: 6.8835		Weighted Average: 4.3178
+MAE		| LightGBM: 0.64541		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.26954		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.67723		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18594 0.19853 
+ MSE: 20.679 17.717 
+ MAE: 0.28481 0.29772 
+ MAPE: 0.11016 0.1253 
+ wMAPE: 0.90759 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.2904 1.2259 
+ MSE: 24.791 18.825 
+ MAE: 1.6394 1.5782 
+ MAPE: 0.44189 0.48899 
+ wMAPE: 0.55235 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16086 0.16308 
+ MSE: 0.65516 0.6252 
+ MAE: 0.32444 0.31469 
+ MAPE: 0.18314 0.18133 
+ wMAPE: 0.916 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_3_Huber_0.39982
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39982, Overall MSE: 5.4314, Overall MAE: 0.62389, Overall MAPE: 0.26049, Overall Weighted MAPE: 0.68229
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.9, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear'
+ 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36352		Weighted Average: 0.373
+MSE		| LightGBM: 2.1265		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58806		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25712		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69673		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44643		Weighted Average: 0.43642
+MSE		| LightGBM: 5.3444		Weighted Average: 4.3089
+MAE		| LightGBM: 0.68078		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26834		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66749		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.44785		Weighted Average: 0.45216
+MSE		| LightGBM: 4.8985		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68519		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29434		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.69073		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.38391		Weighted Average: 0.39416
+MSE		| LightGBM: 8.6914		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60843		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.25788		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68753		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38903		Weighted Average: 0.38409
+MSE		| LightGBM: 3.189		Weighted Average: 2.619
+MAE		| LightGBM: 0.61247		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25295		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.66115		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36732		Weighted Average: 0.37105
+MSE		| LightGBM: 3.0006		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58505		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24967		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66704		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34165		Weighted Average: 0.34269
+MSE		| LightGBM: 3.3456		Weighted Average: 2.3888
+MAE		| LightGBM: 0.55409		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.2442		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.68353		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45557		Weighted Average: 0.44918
+MSE		| LightGBM: 12.737		Weighted Average: 10.171
+MAE		| LightGBM: 0.67371		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25624		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.70787		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41559		Weighted Average: 0.44217
+MSE		| LightGBM: 5.5708		Weighted Average: 4.3178
+MAE		| LightGBM: 0.64113		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.27149		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.67274		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18662 0.19853 
+ MSE: 20.825 17.717 
+ MAE: 0.28555 0.29772 
+ MAPE: 0.11089 0.1253 
+ wMAPE: 0.90996 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.3046 1.2259 
+ MSE: 25.226 18.825 
+ MAE: 1.6545 1.5782 
+ MAPE: 0.44619 0.48899 
+ wMAPE: 0.55743 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.1612 0.16308 
+ MSE: 0.6589 0.6252 
+ MAE: 0.32368 0.31469 
+ MAPE: 0.18227 0.18133 
+ wMAPE: 0.91388 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_3_Huber_0.39982
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39982, Overall MSE: 5.4314, Overall MAE: 0.62389, Overall MAPE: 0.26049, Overall Weighted MAPE: 0.68229
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.9, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear'
+ 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36352		Weighted Average: 0.373
+MSE		| LightGBM: 2.1265		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58806		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25712		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69673		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44643		Weighted Average: 0.43642
+MSE		| LightGBM: 5.3444		Weighted Average: 4.3089
+MAE		| LightGBM: 0.68078		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26834		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66749		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.44785		Weighted Average: 0.45216
+MSE		| LightGBM: 4.8985		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68519		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29434		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.69073		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.38391		Weighted Average: 0.39416
+MSE		| LightGBM: 8.6914		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60843		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.25788		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68753		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38903		Weighted Average: 0.38409
+MSE		| LightGBM: 3.189		Weighted Average: 2.619
+MAE		| LightGBM: 0.61247		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25295		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.66115		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36732		Weighted Average: 0.37105
+MSE		| LightGBM: 3.0006		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58505		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24967		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66704		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34165		Weighted Average: 0.34269
+MSE		| LightGBM: 3.3456		Weighted Average: 2.3888
+MAE		| LightGBM: 0.55409		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.2442		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.68353		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45557		Weighted Average: 0.44918
+MSE		| LightGBM: 12.737		Weighted Average: 10.171
+MAE		| LightGBM: 0.67371		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25624		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.70787		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41559		Weighted Average: 0.44217
+MSE		| LightGBM: 5.5708		Weighted Average: 4.3178
+MAE		| LightGBM: 0.64113		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.27149		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.67274		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18662 0.19853 
+ MSE: 20.825 17.717 
+ MAE: 0.28555 0.29772 
+ MAPE: 0.11089 0.1253 
+ wMAPE: 0.90996 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.3046 1.2259 
+ MSE: 25.226 18.825 
+ MAE: 1.6545 1.5782 
+ MAPE: 0.44619 0.48899 
+ wMAPE: 0.55743 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.1612 0.16308 
+ MSE: 0.6589 0.6252 
+ MAE: 0.32368 0.31469 
+ MAPE: 0.18227 0.18133 
+ wMAPE: 0.91388 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_3_WINDOW_Huber_0.44151
+Test Range: from 2016-04-29 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.44151, Overall MSE: 6.0184, Overall MAE: 0.6644, Overall MAPE: 0.27295, Overall Weighted MAPE: 0.76295
+[+] WA
+Overall Huber: 0.38419, Overall MSE: 3.9894, Overall MAE: 0.61358, Overall MAPE: 0.29045, Overall Weighted MAPE: 0.7046
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.8, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear'
+ 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2016-04-29 to 2016-08-08
+Huber	| LightGBM: 0.37399		Weighted Average: 0.31505
+MSE		| LightGBM: 3.0048		Weighted Average: 1.6563
+MAE		| LightGBM: 0.59007		Weighted Average: 0.54698
+MAPE	| LightGBM: 0.26513		Weighted Average: 0.29473
+WMAPE	| LightGBM: 0.873		Weighted Average: 0.80926
+[+] Fold 1 from 2016-08-08 to 2016-11-23
+Huber	| LightGBM: 0.39184		Weighted Average: 0.32996
+MSE		| LightGBM: 5.0913		Weighted Average: 3.8316
+MAE		| LightGBM: 0.61508		Weighted Average: 0.55827
+MAPE	| LightGBM: 0.26895		Weighted Average: 0.2808
+WMAPE	| LightGBM: 0.8133		Weighted Average: 0.73817
+[+] Fold 2 from 2016-11-23 to 2017-03-10
+Huber	| LightGBM: 0.47189		Weighted Average: 0.4069
+MSE		| LightGBM: 5.697		Weighted Average: 3.3222
+MAE		| LightGBM: 0.69786		Weighted Average: 0.64814
+MAPE	| LightGBM: 0.26673		Weighted Average: 0.31029
+WMAPE	| LightGBM: 0.75188		Weighted Average: 0.69831
+[+] Fold 3 from 2017-03-10 to 2017-06-26
+Huber	| LightGBM: 0.40892		Weighted Average: 0.33999
+MSE		| LightGBM: 3.5866		Weighted Average: 2.1598
+MAE		| LightGBM: 0.62718		Weighted Average: 0.57036
+MAPE	| LightGBM: 0.26822		Weighted Average: 0.28742
+WMAPE	| LightGBM: 0.81726		Weighted Average: 0.74321
+[+] Fold 4 from 2017-06-26 to 2017-10-06
+Huber	| LightGBM: 0.41156		Weighted Average: 0.35677
+MSE		| LightGBM: 7.737		Weighted Average: 6.8108
+MAE		| LightGBM: 0.63401		Weighted Average: 0.58849
+MAPE	| LightGBM: 0.26527		Weighted Average: 0.28538
+WMAPE	| LightGBM: 0.75103		Weighted Average: 0.6971
+[+] Fold 5 from 2017-10-06 to 2018-01-03
+Huber	| LightGBM: 0.51345		Weighted Average: 0.44449
+MSE		| LightGBM: 9.6357		Weighted Average: 5.1275
+MAE		| LightGBM: 0.73751		Weighted Average: 0.67381
+MAPE	| LightGBM: 0.26793		Weighted Average: 0.29282
+WMAPE	| LightGBM: 0.75832		Weighted Average: 0.69281
+[+] Fold 6 from 2018-01-03 to 2018-03-30
+Huber	| LightGBM: 0.45403		Weighted Average: 0.39729
+MSE		| LightGBM: 5.0278		Weighted Average: 2.6116
+MAE		| LightGBM: 0.67294		Weighted Average: 0.62654
+MAPE	| LightGBM: 0.26443		Weighted Average: 0.29332
+WMAPE	| LightGBM: 0.73593		Weighted Average: 0.68518
+[+] Fold 7 from 2018-03-30 to 2018-06-23
+Huber	| LightGBM: 0.45008		Weighted Average: 0.39891
+MSE		| LightGBM: 4.0962		Weighted Average: 2.8722
+MAE		| LightGBM: 0.6768		Weighted Average: 0.63188
+MAPE	| LightGBM: 0.28477		Weighted Average: 0.2979
+WMAPE	| LightGBM: 0.74794		Weighted Average: 0.69829
+[+] Fold 8 from 2018-06-23 to 2018-09-17
+Huber	| LightGBM: 0.45483		Weighted Average: 0.40555
+MSE		| LightGBM: 6.4581		Weighted Average: 4.7819
+MAE		| LightGBM: 0.68506		Weighted Average: 0.63518
+MAPE	| LightGBM: 0.29449		Weighted Average: 0.29537
+WMAPE	| LightGBM: 0.74098		Weighted Average: 0.68703
+[+] Fold 9 from 2018-09-17 to 2018-12-11
+Huber	| LightGBM: 0.43974		Weighted Average: 0.3945
+MSE		| LightGBM: 7.7808		Weighted Average: 5.1769
+MAE		| LightGBM: 0.65979		Weighted Average: 0.60872
+MAPE	| LightGBM: 0.27448		Weighted Average: 0.27064
+WMAPE	| LightGBM: 0.74351		Weighted Average: 0.68596
+[+] Product Group Metrics
+Products in OOS group: 495, products in Promo group: 107, Products in Normal group: 1322
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.20033 0.16846 
+ MSE: 10.332 7.9894 
+ MAE: 0.31245 0.28016 
+ MAPE: 0.13611 0.1366 
+ wMAPE: 1.0634 0.95356
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.4194 1.1468 
+ MSE: 25.791 14.311 
+ MAE: 1.7534 1.4889 
+ MAPE: 0.46283 0.48709 
+ wMAPE: 0.67744 0.57528
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.24716 0.21227 
+ MSE: 1.2231 0.84955 
+ MAE: 0.42635 0.39198 
+ MAPE: 0.21551 0.21681 
+ wMAPE: 0.88825 0.81665
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_Huber_0.39595
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39595, Overall MSE: 5.1439, Overall MAE: 0.61881, Overall MAPE: 0.25962, Overall Weighted MAPE: 0.67674
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 10, 'num_leaves': 64, 'feature_fraction': 0.9, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear'
+ 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'avg_salesprice'
+ 'adwords_impressions' 'adwords_cost' 'adwords_clicks' 'Clicks_email'
+ 'unique_clicks_email' 'price_avgtierone' 'price_lowesttierone'
+ 'price_avgtieronecentred' 'price_lowesttieronecentred'
+ 'impressions_excl_adwords_agg' 'cost_excl_adwords_agg'
+ 'clicks_email_lag_7' 'unique_clicks_email_lag_7' 'adwords_clicks_lag_7'
+ 'adwords_cost_lag_7' 'adwords_impressions_lag_7' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36031		Weighted Average: 0.373
+MSE		| LightGBM: 2.072		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58437		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25698		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69236		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44356		Weighted Average: 0.43642
+MSE		| LightGBM: 5.26		Weighted Average: 4.3089
+MAE		| LightGBM: 0.67792		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26897		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66469		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.44422		Weighted Average: 0.45216
+MSE		| LightGBM: 4.767		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68076		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29398		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.68626		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.37985		Weighted Average: 0.39416
+MSE		| LightGBM: 8.4391		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60333		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.2568		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68177		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.3838		Weighted Average: 0.38409
+MSE		| LightGBM: 3.0102		Weighted Average: 2.619
+MAE		| LightGBM: 0.6063		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25242		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.65448		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36441		Weighted Average: 0.37105
+MSE		| LightGBM: 2.8857		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58132		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24943		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66278		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.33785		Weighted Average: 0.34269
+MSE		| LightGBM: 2.9701		Weighted Average: 2.3888
+MAE		| LightGBM: 0.54832		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.24242		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.67641		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45082		Weighted Average: 0.44918
+MSE		| LightGBM: 11.745		Weighted Average: 10.171
+MAE		| LightGBM: 0.66597		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25359		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.69974		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41017		Weighted Average: 0.44217
+MSE		| LightGBM: 4.9668		Weighted Average: 4.3178
+MAE		| LightGBM: 0.6329		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.26863		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.66411		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18086 0.19853 
+ MSE: 20.143 17.717 
+ MAE: 0.28135 0.29772 
+ MAPE: 0.11234 0.1253 
+ wMAPE: 0.89656 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.3027 1.2259 
+ MSE: 24.863 18.825 
+ MAE: 1.654 1.5782 
+ MAPE: 0.45201 0.48899 
+ wMAPE: 0.55725 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16117 0.16308 
+ MSE: 0.65551 0.6252 
+ MAE: 0.32446 0.31469 
+ MAPE: 0.18392 0.18133 
+ wMAPE: 0.91606 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_2_Huber_0.3992
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.3992, Overall MSE: 5.4165, Overall MAE: 0.62283, Overall MAPE: 0.25998, Overall Weighted MAPE: 0.68114
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 3, 'num_leaves': 82, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 1.0, 'reg_lambda': 1.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear'
+ 'holiday_nl' 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean'
+ 'lag_7_median' 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max'
+ 'lag_8_mean' 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'productid_count_lag_8'
+ 'productid_count_lag_8_min' 'productid_count_lag_8_max'
+ 'productid_count_lag_8_median' 'productid_count_lag_8_sum'
+ 'productid_count_lag_14' 'productid_count_lag_14_min'
+ 'productid_count_lag_14_max' 'productid_count_lag_14_median'
+ 'productid_count_lag_14_sum' 'product_type_id' 'brand_id'
+ 'product_group_id' 'subproduct_type_id' 'actual_full_mean'
+ 'actual_full_median' 'actual_full_var' 'actual_weekday_max'
+ 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.36292		Weighted Average: 0.373
+MSE		| LightGBM: 2.1276		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58673		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25652		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69515		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.44624		Weighted Average: 0.43642
+MSE		| LightGBM: 5.3446		Weighted Average: 4.3089
+MAE		| LightGBM: 0.68023		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26777		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.66696		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.44746		Weighted Average: 0.45216
+MSE		| LightGBM: 4.8978		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68405		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29288		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.68958		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.38306		Weighted Average: 0.39416
+MSE		| LightGBM: 8.6926		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60757		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.25773		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68656		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38815		Weighted Average: 0.38409
+MSE		| LightGBM: 3.1781		Weighted Average: 2.619
+MAE		| LightGBM: 0.61165		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25298		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.66025		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36715		Weighted Average: 0.37105
+MSE		| LightGBM: 3.0027		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58447		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24936		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66638		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34053		Weighted Average: 0.34269
+MSE		| LightGBM: 3.2449		Weighted Average: 2.3888
+MAE		| LightGBM: 0.55237		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.24381		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.6814		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45506		Weighted Average: 0.44918
+MSE		| LightGBM: 12.7		Weighted Average: 10.171
+MAE		| LightGBM: 0.67262		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25596		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.70673		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41438		Weighted Average: 0.44217
+MSE		| LightGBM: 5.6379		Weighted Average: 4.3178
+MAE		| LightGBM: 0.63907		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.27001		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.67058		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18595 0.19853 
+ MSE: 20.833 17.717 
+ MAE: 0.28441 0.29772 
+ MAPE: 0.11008 0.1253 
+ wMAPE: 0.90631 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.3046 1.2259 
+ MSE: 25.368 18.825 
+ MAE: 1.6545 1.5782 
+ MAPE: 0.44598 0.48899 
+ wMAPE: 0.55744 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16089 0.16308 
+ MSE: 0.6576 0.6252 
+ MAE: 0.32226 0.31469 
+ MAPE: 0.18088 0.18133 
+ wMAPE: 0.90987 0.88847
+ [----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_3_Huber_0.39684
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39684, Overall MSE: 5.3519, Overall MAE: 0.62027, Overall MAPE: 0.25937, Overall Weighted MAPE: 0.67833
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 64, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['product_id' 'month' 'weekday' 'dayofmonth' 'weekofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'productid_count_lag_8'
+ 'productid_count_lag_8_min' 'productid_count_lag_8_max'
+ 'productid_count_lag_8_median' 'productid_count_lag_8_sum'
+ 'productid_count_lag_14' 'productid_count_lag_14_min'
+ 'productid_count_lag_14_max' 'productid_count_lag_14_median'
+ 'productid_count_lag_14_sum' 'product_type_id' 'product_group_id'
+ 'subproduct_type_id' 'actual_full_mean' 'actual_full_median'
+ 'actual_full_var' 'actual_weekday_max' 'actual_weekday_median'
+ 'actual_weekday_mean' 'full_mean_lag_7_median_prod'
+ 'full_mean_lag_7_mean_prod' 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.3642		Weighted Average: 0.373
+MSE		| LightGBM: 2.1208		Weighted Average: 2.0743
+MAE		| LightGBM: 0.58745		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25767		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.69601		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.43758		Weighted Average: 0.43642
+MSE		| LightGBM: 5.2151		Weighted Average: 4.3089
+MAE		| LightGBM: 0.67086		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.2654		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.65777		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.44503		Weighted Average: 0.45216
+MSE		| LightGBM: 4.9103		Weighted Average: 4.0504
+MAE		| LightGBM: 0.68172		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.29186		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.68722		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.38228		Weighted Average: 0.39416
+MSE		| LightGBM: 8.5484		Weighted Average: 7.7929
+MAE		| LightGBM: 0.60541		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.2551		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.68412		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.38483		Weighted Average: 0.38409
+MSE		| LightGBM: 3.1471		Weighted Average: 2.619
+MAE		| LightGBM: 0.60818		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.25243		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.65651		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36465		Weighted Average: 0.37105
+MSE		| LightGBM: 2.8947		Weighted Average: 2.4744
+MAE		| LightGBM: 0.58192		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24929		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.66347		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.33865		Weighted Average: 0.34269
+MSE		| LightGBM: 3.2694		Weighted Average: 2.3888
+MAE		| LightGBM: 0.5507		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.24352		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.67934		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.45363		Weighted Average: 0.44918
+MSE		| LightGBM: 12.612		Weighted Average: 10.171
+MAE		| LightGBM: 0.67172		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.25601		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.70578		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.41394		Weighted Average: 0.44217
+MSE		| LightGBM: 5.4286		Weighted Average: 4.3178
+MAE		| LightGBM: 0.63955		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.27192		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.67109		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18487 0.19853 
+ MSE: 20.508 17.717 
+ MAE: 0.28251 0.29772 
+ MAPE: 0.10887 0.1253 
+ wMAPE: 0.90026 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.292 1.2259 
+ MSE: 24.988 18.825 
+ MAE: 1.6417 1.5782 
+ MAPE: 0.44619 0.48899 
+ wMAPE: 0.5531 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16037 0.16308 
+ MSE: 0.65307 0.6252 
+ MAE: 0.32149 0.31469 
+ MAPE: 0.18047 0.18133 
+ wMAPE: 0.90767 0.88847
+ [----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_WA_Huber_0.37572
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.37572, Overall MSE: 4.7393, Overall MAE: 0.59621, Overall MAPE: 0.25224, Overall Weighted MAPE: 0.65203
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 64, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'productid_count_lag_8'
+ 'productid_count_lag_8_min' 'productid_count_lag_8_max'
+ 'productid_count_lag_8_median' 'productid_count_lag_8_sum'
+ 'productid_count_lag_14' 'productid_count_lag_14_min'
+ 'productid_count_lag_14_max' 'productid_count_lag_14_median'
+ 'productid_count_lag_14_sum' 'product_type_id' 'product_group_id'
+ 'subproduct_type_id' 'avg_salesprice' 'adwords_impressions'
+ 'adwords_cost' 'adwords_clicks' 'Clicks_email' 'unique_clicks_email'
+ 'price_avgtierone' 'price_lowesttierone' 'price_avgtieronecentred'
+ 'price_lowesttieronecentred' 'impressions_excl_adwords_agg'
+ 'cost_excl_adwords_agg' 'clicks_email_lag_7' 'unique_clicks_email_lag_7'
+ 'adwords_clicks_lag_7' 'adwords_cost_lag_7' 'adwords_impressions_lag_7'
+ 'wa' 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.34432		Weighted Average: 0.373
+MSE		| LightGBM: 1.9014		Weighted Average: 2.0743
+MAE		| LightGBM: 0.56627		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.24959		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.67091		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.42011		Weighted Average: 0.43642
+MSE		| LightGBM: 4.7981		Weighted Average: 4.3089
+MAE		| LightGBM: 0.6523		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26377		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.63957		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.42395		Weighted Average: 0.45216
+MSE		| LightGBM: 4.4823		Weighted Average: 4.0504
+MAE		| LightGBM: 0.65778		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.28452		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.66309		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.36164		Weighted Average: 0.39416
+MSE		| LightGBM: 8.0644		Weighted Average: 7.7929
+MAE		| LightGBM: 0.58304		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.24991		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.65884		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.36045		Weighted Average: 0.38409
+MSE		| LightGBM: 2.6144		Weighted Average: 2.619
+MAE		| LightGBM: 0.58129		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.247		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.62748		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.34421		Weighted Average: 0.37105
+MSE		| LightGBM: 2.5126		Weighted Average: 2.4744
+MAE		| LightGBM: 0.55882		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24254		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.63713		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.3213		Weighted Average: 0.34269
+MSE		| LightGBM: 2.5503		Weighted Average: 2.3888
+MAE		| LightGBM: 0.52945		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.235		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.65313		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.42578		Weighted Average: 0.44918
+MSE		| LightGBM: 10.912		Weighted Average: 10.171
+MAE		| LightGBM: 0.63768		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.24474		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.67002		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.39336		Weighted Average: 0.44217
+MSE		| LightGBM: 4.7951		Weighted Average: 4.3178
+MAE		| LightGBM: 0.61265		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.25669		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.64286		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.1715 0.19853 
+ MSE: 19.415 17.717 
+ MAE: 0.26978 0.29772 
+ MAPE: 0.10886 0.1253 
+ wMAPE: 0.85971 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.211 1.2259 
+ MSE: 23.466 18.825 
+ MAE: 1.5586 1.5782 
+ MAPE: 0.42708 0.48899 
+ wMAPE: 0.52511 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.15415 0.16308 
+ MSE: 0.60605 0.6252 
+ MAE: 0.31174 0.31469 
+ MAPE: 0.1746 0.18133 
+ wMAPE: 0.88015 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_WA_128_Huber_0.37112
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.37112, Overall MSE: 4.3576, Overall MAE: 0.5918, Overall MAPE: 0.25281, Overall Weighted MAPE: 0.6472
+[+] WA
+Overall Huber: 0.40182, Overall MSE: 4.4864, Overall MAE: 0.62718, Overall MAPE: 0.28668, Overall Weighted MAPE: 0.68589
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_9' 'lag_9_min' 'lag_9_max'
+ 'lag_9_mean' 'lag_9_median' 'lag_9_sum' 'lag_9_var' 'lag_14' 'lag_14_min'
+ 'lag_14_max' 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_min'
+ 'productid_count_lag_7_max' 'productid_count_lag_7_median'
+ 'productid_count_lag_7_sum' 'productid_count_lag_8'
+ 'productid_count_lag_8_min' 'productid_count_lag_8_max'
+ 'productid_count_lag_8_median' 'productid_count_lag_8_sum'
+ 'productid_count_lag_9' 'productid_count_lag_9_min'
+ 'productid_count_lag_9_max' 'productid_count_lag_9_median'
+ 'productid_count_lag_9_sum' 'productid_count_lag_14'
+ 'productid_count_lag_14_min' 'productid_count_lag_14_max'
+ 'productid_count_lag_14_median' 'productid_count_lag_14_sum'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'avg_salesprice' 'adwords_impressions' 'adwords_cost' 'adwords_clicks'
+ 'Clicks_email' 'unique_clicks_email' 'price_avgtierone'
+ 'price_lowesttierone' 'price_avgtieronecentred'
+ 'price_lowesttieronecentred' 'impressions_excl_adwords_agg'
+ 'cost_excl_adwords_agg' 'clicks_email_lag_7' 'unique_clicks_email_lag_7'
+ 'adwords_clicks_lag_7' 'adwords_cost_lag_7' 'adwords_impressions_lag_7'
+ 'wa' 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'weekday_mean_lag_7_median_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.34328		Weighted Average: 0.373
+MSE		| LightGBM: 1.8905		Weighted Average: 2.0743
+MAE		| LightGBM: 0.56548		Weighted Average: 0.60164
+MAPE	| LightGBM: 0.25051		Weighted Average: 0.29076
+WMAPE	| LightGBM: 0.66999		Weighted Average: 0.71283
+[+] Fold 1 from 2018-05-18 to 2018-06-16
+Huber	| LightGBM: 0.41342		Weighted Average: 0.43642
+MSE		| LightGBM: 4.2637		Weighted Average: 4.3089
+MAE		| LightGBM: 0.64711		Weighted Average: 0.67503
+MAPE	| LightGBM: 0.26691		Weighted Average: 0.29777
+WMAPE	| LightGBM: 0.63448		Weighted Average: 0.66186
+[+] Fold 2 from 2018-06-16 to 2018-07-14
+Huber	| LightGBM: 0.41809		Weighted Average: 0.45216
+MSE		| LightGBM: 3.9253		Weighted Average: 4.0504
+MAE		| LightGBM: 0.65204		Weighted Average: 0.69228
+MAPE	| LightGBM: 0.28539		Weighted Average: 0.3241
+WMAPE	| LightGBM: 0.65731		Weighted Average: 0.69787
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.35676		Weighted Average: 0.39416
+MSE		| LightGBM: 7.3614		Weighted Average: 7.7929
+MAE		| LightGBM: 0.57814		Weighted Average: 0.62226
+MAPE	| LightGBM: 0.25045		Weighted Average: 0.28991
+WMAPE	| LightGBM: 0.6533		Weighted Average: 0.70316
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.35455		Weighted Average: 0.38409
+MSE		| LightGBM: 2.2985		Weighted Average: 2.619
+MAE		| LightGBM: 0.57531		Weighted Average: 0.61027
+MAPE	| LightGBM: 0.24707		Weighted Average: 0.28047
+WMAPE	| LightGBM: 0.62103		Weighted Average: 0.65876
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.34159		Weighted Average: 0.37105
+MSE		| LightGBM: 2.3969		Weighted Average: 2.4744
+MAE		| LightGBM: 0.55654		Weighted Average: 0.59158
+MAPE	| LightGBM: 0.24305		Weighted Average: 0.27817
+WMAPE	| LightGBM: 0.63453		Weighted Average: 0.67448
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.31827		Weighted Average: 0.34269
+MSE		| LightGBM: 2.4387		Weighted Average: 2.3888
+MAE		| LightGBM: 0.52625		Weighted Average: 0.55497
+MAPE	| LightGBM: 0.23442		Weighted Average: 0.26572
+WMAPE	| LightGBM: 0.64918		Weighted Average: 0.68461
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.41984		Weighted Average: 0.44918
+MSE		| LightGBM: 10.185		Weighted Average: 10.171
+MAE		| LightGBM: 0.63166		Weighted Average: 0.66011
+MAPE	| LightGBM: 0.2447		Weighted Average: 0.26545
+WMAPE	| LightGBM: 0.66369		Weighted Average: 0.69358
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.38626		Weighted Average: 0.44217
+MSE		| LightGBM: 4.4791		Weighted Average: 4.3178
+MAE		| LightGBM: 0.60451		Weighted Average: 0.66164
+MAPE	| LightGBM: 0.25496		Weighted Average: 0.29201
+WMAPE	| LightGBM: 0.63432		Weighted Average: 0.69427
+[+] Product Group Metrics
+Products in OOS group: 494, products in Promo group: 106, Products in Normal group: 1318
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.16336 0.19853 
+ MSE: 17.118 17.717 
+ MAE: 0.26166 0.29772 
+ MAPE: 0.10924 0.1253 
+ wMAPE: 0.83382 0.94873
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.1532 1.2259 
+ MSE: 18.839 18.825 
+ MAE: 1.5005 1.5782 
+ MAPE: 0.42656 0.48899 
+ wMAPE: 0.50555 0.53171
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.15426 0.16308 
+ MSE: 0.60478 0.6252 
+ MAE: 0.31246 0.31469 
+ MAPE: 0.17542 0.18133 
+ wMAPE: 0.88218 0.88847
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_WA_128_255_Huber_0.37608
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.37608, Overall MSE: 4.591, Overall MAE: 0.59813, Overall MAPE: 0.25336, Overall Weighted MAPE: 0.66013
+[+] WA
+Overall Huber: 0.40024, Overall MSE: 4.2809, Overall MAE: 0.62647, Overall MAPE: 0.28762, Overall Weighted MAPE: 0.6914
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 255, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_sum'
+ 'productid_count_lag_8' 'productid_count_lag_8_sum'
+ 'productid_count_lag_9' 'productid_count_lag_9_sum' 'wa'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.34042		Weighted Average: 0.36741
+MSE		| LightGBM: 1.8374		Weighted Average: 2.0022
+MAE		| LightGBM: 0.56099		Weighted Average: 0.59526
+MAPE	| LightGBM: 0.24696		Weighted Average: 0.29018
+WMAPE	| LightGBM: 0.67893		Weighted Average: 0.72039
+[+] Fold 1 from 2018-05-18 to 2018-06-15
+Huber	| LightGBM: 0.41891		Weighted Average: 0.43573
+MSE		| LightGBM: 4.7893		Weighted Average: 4.4118
+MAE		| LightGBM: 0.65197		Weighted Average: 0.6748
+MAPE	| LightGBM: 0.26312		Weighted Average: 0.29689
+WMAPE	| LightGBM: 0.64245		Weighted Average: 0.66495
+[+] Fold 2 from 2018-06-15 to 2018-07-14
+Huber	| LightGBM: 0.41816		Weighted Average: 0.44602
+MSE		| LightGBM: 3.9055		Weighted Average: 3.7778
+MAE		| LightGBM: 0.65346		Weighted Average: 0.68644
+MAPE	| LightGBM: 0.28516		Weighted Average: 0.32351
+WMAPE	| LightGBM: 0.67012		Weighted Average: 0.70394
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.36131		Weighted Average: 0.39234
+MSE		| LightGBM: 8.4131		Weighted Average: 7.991
+MAE		| LightGBM: 0.58437		Weighted Average: 0.62088
+MAPE	| LightGBM: 0.25204		Weighted Average: 0.29132
+WMAPE	| LightGBM: 0.67354		Weighted Average: 0.71563
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.3719		Weighted Average: 0.39228
+MSE		| LightGBM: 3.2241		Weighted Average: 3.1111
+MAE		| LightGBM: 0.59419		Weighted Average: 0.619
+MAPE	| LightGBM: 0.24863		Weighted Average: 0.28151
+WMAPE	| LightGBM: 0.63301		Weighted Average: 0.65944
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.3451		Weighted Average: 0.37054
+MSE		| LightGBM: 2.3416		Weighted Average: 2.4204
+MAE		| LightGBM: 0.56182		Weighted Average: 0.59324
+MAPE	| LightGBM: 0.24373		Weighted Average: 0.2809
+WMAPE	| LightGBM: 0.64869		Weighted Average: 0.68497
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.32842		Weighted Average: 0.34606
+MSE		| LightGBM: 2.5216		Weighted Average: 2.11
+MAE		| LightGBM: 0.53953		Weighted Average: 0.56068
+MAPE	| LightGBM: 0.23817		Weighted Average: 0.26887
+WMAPE	| LightGBM: 0.66076		Weighted Average: 0.68666
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.42139		Weighted Average: 0.43862
+MSE		| LightGBM: 9.8529		Weighted Average: 8.4664
+MAE		| LightGBM: 0.63644		Weighted Average: 0.65078
+MAPE	| LightGBM: 0.2478		Weighted Average: 0.26652
+WMAPE	| LightGBM: 0.67837		Weighted Average: 0.69367
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.39076		Weighted Average: 0.44421
+MSE		| LightGBM: 3.9258		Weighted Average: 3.9719
+MAE		| LightGBM: 0.61205		Weighted Average: 0.66516
+MAPE	| LightGBM: 0.2588		Weighted Average: 0.29328
+WMAPE	| LightGBM: 0.65407		Weighted Average: 0.71083
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 110, Products in Normal group: 1248
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.19139 0.22235 
+ MSE: 19.964 18.147 
+ MAE: 0.29341 0.32708 
+ MAPE: 0.11282 0.13485 
+ wMAPE: 0.83133 0.92673
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.4601 1.5316 
+ MSE: 27.931 26.517 
+ MAE: 1.8181 1.8965 
+ MAPE: 0.43074 0.50692 
+ wMAPE: 0.48864 0.50971
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16206 0.17039 
+ MSE: 0.66778 0.67974 
+ MAE: 0.32217 0.32638 
+ MAPE: 0.17674 0.1862 
+ wMAPE: 0.86577 0.87709
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_WA_128_2048_Huber_0.37123
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.37123, Overall MSE: 4.2601, Overall MAE: 0.59325, Overall MAPE: 0.25321, Overall Weighted MAPE: 0.65474
+[+] WA
+Overall Huber: 0.40024, Overall MSE: 4.2809, Overall MAE: 0.62647, Overall MAPE: 0.28762, Overall Weighted MAPE: 0.6914
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 2048, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var'
+ 'productid_count_lag_7' 'productid_count_lag_7_max'
+ 'productid_count_lag_7_sum' 'productid_count_lag_8'
+ 'productid_count_lag_8_max' 'productid_count_lag_8_sum'
+ 'productid_count_lag_9' 'productid_count_lag_9_max'
+ 'productid_count_lag_9_sum' 'wa' 'product_type_id' 'product_group_id'
+ 'subproduct_type_id' 'actual_full_mean' 'actual_full_median'
+ 'actual_full_var' 'actual_weekday_max' 'actual_weekday_median'
+ 'actual_weekday_mean' 'full_mean_lag_7_median_prod'
+ 'full_mean_lag_7_mean_prod' 'full_mean_lag_7_max_prod'
+ 'weekday_mean_lag_7_median_prod' 'weekday_mean_lag_7_max_prod'
+ 'full_mean_lag_7_prod' 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.33842		Weighted Average: 0.36741
+MSE		| LightGBM: 1.7901		Weighted Average: 2.0022
+MAE		| LightGBM: 0.55951		Weighted Average: 0.59526
+MAPE	| LightGBM: 0.2476		Weighted Average: 0.29018
+WMAPE	| LightGBM: 0.67713		Weighted Average: 0.72039
+[+] Fold 1 from 2018-05-18 to 2018-06-15
+Huber	| LightGBM: 0.41496		Weighted Average: 0.43573
+MSE		| LightGBM: 4.3013		Weighted Average: 4.4118
+MAE		| LightGBM: 0.64799		Weighted Average: 0.6748
+MAPE	| LightGBM: 0.26338		Weighted Average: 0.29689
+WMAPE	| LightGBM: 0.63853		Weighted Average: 0.66495
+[+] Fold 2 from 2018-06-15 to 2018-07-14
+Huber	| LightGBM: 0.41314		Weighted Average: 0.44602
+MSE		| LightGBM: 3.4811		Weighted Average: 3.7778
+MAE		| LightGBM: 0.64864		Weighted Average: 0.68644
+MAPE	| LightGBM: 0.28583		Weighted Average: 0.32351
+WMAPE	| LightGBM: 0.66518		Weighted Average: 0.70394
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.35787		Weighted Average: 0.39234
+MSE		| LightGBM: 7.9989		Weighted Average: 7.991
+MAE		| LightGBM: 0.58064		Weighted Average: 0.62088
+MAPE	| LightGBM: 0.25149		Weighted Average: 0.29132
+WMAPE	| LightGBM: 0.66924		Weighted Average: 0.71563
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.36422		Weighted Average: 0.39228
+MSE		| LightGBM: 2.7947		Weighted Average: 3.1111
+MAE		| LightGBM: 0.58663		Weighted Average: 0.619
+MAPE	| LightGBM: 0.24843		Weighted Average: 0.28151
+WMAPE	| LightGBM: 0.62495		Weighted Average: 0.65944
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.34068		Weighted Average: 0.37054
+MSE		| LightGBM: 2.1863		Weighted Average: 2.4204
+MAE		| LightGBM: 0.55717		Weighted Average: 0.59324
+MAPE	| LightGBM: 0.24302		Weighted Average: 0.2809
+WMAPE	| LightGBM: 0.64333		Weighted Average: 0.68497
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.32551		Weighted Average: 0.34606
+MSE		| LightGBM: 2.4302		Weighted Average: 2.11
+MAE		| LightGBM: 0.53616		Weighted Average: 0.56068
+MAPE	| LightGBM: 0.23726		Weighted Average: 0.26887
+WMAPE	| LightGBM: 0.65663		Weighted Average: 0.68666
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.41367		Weighted Average: 0.43862
+MSE		| LightGBM: 9.2945		Weighted Average: 8.4664
+MAE		| LightGBM: 0.62869		Weighted Average: 0.65078
+MAPE	| LightGBM: 0.248		Weighted Average: 0.26652
+WMAPE	| LightGBM: 0.67012		Weighted Average: 0.69367
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.38116		Weighted Average: 0.44421
+MSE		| LightGBM: 3.4674		Weighted Average: 3.9719
+MAE		| LightGBM: 0.60197		Weighted Average: 0.66516
+MAPE	| LightGBM: 0.25715		Weighted Average: 0.29328
+WMAPE	| LightGBM: 0.6433		Weighted Average: 0.71083
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 110, Products in Normal group: 1248
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.18759 0.22235 
+ MSE: 18.343 18.147 
+ MAE: 0.28968 0.32708 
+ MAPE: 0.11359 0.13485 
+ wMAPE: 0.82076 0.92673
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.388 1.5316 
+ MSE: 22.408 26.517 
+ MAE: 1.7459 1.8965 
+ MAPE: 0.4291 0.50692 
+ wMAPE: 0.46924 0.50971
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16197 0.17039 
+ MSE: 0.6659 0.67974 
+ MAE: 0.32213 0.32638 
+ MAPE: 0.17682 0.1862 
+ wMAPE: 0.86566 0.87709
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_MARKETING_LAGWA_128_4096_Huber_0.39723
+Test Range: from 2018-04-20 to 2018-12-11
+[+] LGBM
+Overall Huber: 0.39723, Overall MSE: 5.0093, Overall MAE: 0.62153, Overall MAPE: 0.25931, Overall Weighted MAPE: 0.68595
+[+] WA
+Overall Huber: 0.40024, Overall MSE: 4.2809, Overall MAE: 0.62647, Overall MAPE: 0.28762, Overall Weighted MAPE: 0.6914
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.1, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 4096, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'wa_lag_7'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-20 to 2018-05-18
+Huber	| LightGBM: 0.35692		Weighted Average: 0.36741
+MSE		| LightGBM: 2.0165		Weighted Average: 2.0022
+MAE		| LightGBM: 0.57996		Weighted Average: 0.59526
+MAPE	| LightGBM: 0.25294		Weighted Average: 0.29018
+WMAPE	| LightGBM: 0.70187		Weighted Average: 0.72039
+[+] Fold 1 from 2018-05-18 to 2018-06-15
+Huber	| LightGBM: 0.44523		Weighted Average: 0.43573
+MSE		| LightGBM: 5.5097		Weighted Average: 4.4118
+MAE		| LightGBM: 0.6789		Weighted Average: 0.6748
+MAPE	| LightGBM: 0.26524		Weighted Average: 0.29689
+WMAPE	| LightGBM: 0.66899		Weighted Average: 0.66495
+[+] Fold 2 from 2018-06-15 to 2018-07-14
+Huber	| LightGBM: 0.43803		Weighted Average: 0.44602
+MSE		| LightGBM: 4.2683		Weighted Average: 3.7778
+MAE		| LightGBM: 0.67664		Weighted Average: 0.68644
+MAPE	| LightGBM: 0.29425		Weighted Average: 0.32351
+WMAPE	| LightGBM: 0.69389		Weighted Average: 0.70394
+[+] Fold 3 from 2018-07-14 to 2018-08-11
+Huber	| LightGBM: 0.3843		Weighted Average: 0.39234
+MSE		| LightGBM: 8.9108		Weighted Average: 7.991
+MAE		| LightGBM: 0.6101		Weighted Average: 0.62088
+MAPE	| LightGBM: 0.25859		Weighted Average: 0.29132
+WMAPE	| LightGBM: 0.7032		Weighted Average: 0.71563
+[+] Fold 4 from 2018-08-11 to 2018-09-08
+Huber	| LightGBM: 0.39226		Weighted Average: 0.39228
+MSE		| LightGBM: 3.4576		Weighted Average: 3.1111
+MAE		| LightGBM: 0.61711		Weighted Average: 0.619
+MAPE	| LightGBM: 0.25495		Weighted Average: 0.28151
+WMAPE	| LightGBM: 0.65743		Weighted Average: 0.65944
+[+] Fold 5 from 2018-09-08 to 2018-10-07
+Huber	| LightGBM: 0.36521		Weighted Average: 0.37054
+MSE		| LightGBM: 2.6334		Weighted Average: 2.4204
+MAE		| LightGBM: 0.58323		Weighted Average: 0.59324
+MAPE	| LightGBM: 0.24872		Weighted Average: 0.2809
+WMAPE	| LightGBM: 0.67342		Weighted Average: 0.68497
+[+] Fold 6 from 2018-10-07 to 2018-11-04
+Huber	| LightGBM: 0.34827		Weighted Average: 0.34606
+MSE		| LightGBM: 2.9043		Weighted Average: 2.11
+MAE		| LightGBM: 0.56133		Weighted Average: 0.56068
+MAPE	| LightGBM: 0.24327		Weighted Average: 0.26887
+WMAPE	| LightGBM: 0.68746		Weighted Average: 0.68666
+[+] Fold 7 from 2018-11-04 to 2018-12-02
+Huber	| LightGBM: 0.4457		Weighted Average: 0.43862
+MSE		| LightGBM: 10.555		Weighted Average: 8.4664
+MAE		| LightGBM: 0.66352		Weighted Average: 0.65078
+MAPE	| LightGBM: 0.25429		Weighted Average: 0.26652
+WMAPE	| LightGBM: 0.70724		Weighted Average: 0.69367
+[+] Fold 8 from 2018-12-02 to 2018-12-11
+Huber	| LightGBM: 0.40904		Weighted Average: 0.44421
+MSE		| LightGBM: 4.2956		Weighted Average: 3.9719
+MAE		| LightGBM: 0.6331		Weighted Average: 0.66516
+MAPE	| LightGBM: 0.26725		Weighted Average: 0.29328
+WMAPE	| LightGBM: 0.67656		Weighted Average: 0.71083
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 110, Products in Normal group: 1248
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.20486 0.22235 
+ MSE: 21.051 18.147 
+ MAE: 0.3083 0.32708 
+ MAPE: 0.1152 0.13485 
+ wMAPE: 0.87352 0.92673
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.5949 1.5316 
+ MSE: 31.567 26.517 
+ MAE: 1.9552 1.8965 
+ MAPE: 0.45605 0.50692 
+ wMAPE: 0.52549 0.50971
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.16997 0.17039 
+ MSE: 0.73947 0.67974 
+ MAE: 0.33547 0.32638 
+ MAPE: 0.18534 0.1862 
+ wMAPE: 0.9015 0.87709
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_NEWCV_Huber_0.36445
+Test Range: from 2018-04-20 to 2018-12-09
+[+] LGBM
+Overall Huber: 0.36445, Overall MSE: 2.8485, Overall MAE: 0.58597, Overall MAPE: 0.25561, Overall Weighted MAPE: 0.68521
+[+] WA
+Overall Huber: 0.38365, Overall MSE: 2.7602, Overall MAE: 0.60871, Overall MAPE: 0.29111, Overall Weighted MAPE: 0.7118
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.12, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 4096, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'wa_lag_7'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-20 to 2018-04-27
+Huber	| LightGBM: 0.32724		Weighted Average: 0.38146
+MSE		| LightGBM: 1.8857		Weighted Average: 2.4442
+MAE		| LightGBM: 0.54338		Weighted Average: 0.60394
+MAPE	| LightGBM: 0.2548		Weighted Average: 0.31362
+WMAPE	| LightGBM: 0.72706		Weighted Average: 0.8081
+[+] Fold 1 from 2018-05-18 to 2018-05-25
+Huber	| LightGBM: 0.378		Weighted Average: 0.39581
+MSE		| LightGBM: 2.2864		Weighted Average: 2.3197
+MAE		| LightGBM: 0.60653		Weighted Average: 0.62711
+MAPE	| LightGBM: 0.261		Weighted Average: 0.29156
+WMAPE	| LightGBM: 0.69868		Weighted Average: 0.72238
+[+] Fold 2 from 2018-06-15 to 2018-06-23
+Huber	| LightGBM: 0.40054		Weighted Average: 0.40888
+MSE		| LightGBM: 2.9477		Weighted Average: 2.4389
+MAE		| LightGBM: 0.63645		Weighted Average: 0.65214
+MAPE	| LightGBM: 0.27177		Weighted Average: 0.31048
+WMAPE	| LightGBM: 0.64182		Weighted Average: 0.65765
+[+] Fold 3 from 2018-07-14 to 2018-07-21
+Huber	| LightGBM: 0.39224		Weighted Average: 0.39283
+MSE		| LightGBM: 4.7347		Weighted Average: 3.7773
+MAE		| LightGBM: 0.61877		Weighted Average: 0.62601
+MAPE	| LightGBM: 0.25504		Weighted Average: 0.29306
+WMAPE	| LightGBM: 0.67565		Weighted Average: 0.68356
+[+] Fold 4 from 2018-08-11 to 2018-08-18
+Huber	| LightGBM: 0.36545		Weighted Average: 0.36257
+MSE		| LightGBM: 3.0124		Weighted Average: 2.3485
+MAE		| LightGBM: 0.58555		Weighted Average: 0.58599
+MAPE	| LightGBM: 0.24521		Weighted Average: 0.27843
+WMAPE	| LightGBM: 0.68134		Weighted Average: 0.68185
+[+] Fold 5 from 2018-09-08 to 2018-09-15
+Huber	| LightGBM: 0.36905		Weighted Average: 0.3869
+MSE		| LightGBM: 2.7738		Weighted Average: 3.104
+MAE		| LightGBM: 0.58708		Weighted Average: 0.61293
+MAPE	| LightGBM: 0.24783		Weighted Average: 0.29027
+WMAPE	| LightGBM: 0.67628		Weighted Average: 0.70606
+[+] Fold 6 from 2018-10-07 to 2018-10-14
+Huber	| LightGBM: 0.32807		Weighted Average: 0.34125
+MSE		| LightGBM: 2.1499		Weighted Average: 1.9878
+MAE		| LightGBM: 0.54264		Weighted Average: 0.55729
+MAPE	| LightGBM: 0.25127		Weighted Average: 0.27755
+WMAPE	| LightGBM: 0.70315		Weighted Average: 0.72214
+[+] Fold 7 from 2018-11-04 to 2018-11-11
+Huber	| LightGBM: 0.32299		Weighted Average: 0.33408
+MSE		| LightGBM: 1.941		Weighted Average: 2.1904
+MAE		| LightGBM: 0.53614		Weighted Average: 0.54372
+MAPE	| LightGBM: 0.24923		Weighted Average: 0.26507
+WMAPE	| LightGBM: 0.69295		Weighted Average: 0.70274
+[+] Fold 8 from 2018-12-02 to 2018-12-09
+Huber	| LightGBM: 0.39801		Weighted Average: 0.45117
+MSE		| LightGBM: 3.8955		Weighted Average: 4.2363
+MAE		| LightGBM: 0.61926		Weighted Average: 0.67189
+MAPE	| LightGBM: 0.26522		Weighted Average: 0.30075
+WMAPE	| LightGBM: 0.68401		Weighted Average: 0.74214
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 110, Products in Normal group: 1248
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.1377 0.15647 
+ MSE: 5.1417 4.2972 
+ MAE: 0.23803 0.25973 
+ MAPE: 0.11081 0.13297 
+ wMAPE: 0.86594 0.94488
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.4161 1.4906 
+ MSE: 20.723 19.883 
+ MAE: 1.7723 1.8551 
+ MAPE: 0.44867 0.52491 
+ wMAPE: 0.52117 0.54552
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.15829 0.1624 
+ MSE: 0.63733 0.60864 
+ MAE: 0.32101 0.31653 
+ MAPE: 0.18136 0.1848 
+ wMAPE: 0.90466 0.89203
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_NEWCV_Huber_0.36421
+Test Range: from 2018-04-20 to 2018-12-09
+[+] LGBM
+Overall Huber: 0.36421, Overall MSE: 2.8402, Overall MAE: 0.58562, Overall MAPE: 0.25553, Overall Weighted MAPE: 0.68481
+[+] WA
+Overall Huber: 0.38365, Overall MSE: 2.7602, Overall MAE: 0.60871, Overall MAPE: 0.29111, Overall Weighted MAPE: 0.7118
+[+] Parameters: {'nthread': 64, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.12, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 4096, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'wa_lag_7'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-20 to 2018-04-27
+Huber	| LightGBM: 0.32686		Weighted Average: 0.38146
+MSE		| LightGBM: 1.8759		Weighted Average: 2.4442
+MAE		| LightGBM: 0.54207		Weighted Average: 0.60394
+MAPE	| LightGBM: 0.25375		Weighted Average: 0.31362
+WMAPE	| LightGBM: 0.72531		Weighted Average: 0.8081
+[+] Fold 1 from 2018-05-18 to 2018-05-25
+Huber	| LightGBM: 0.378		Weighted Average: 0.39581
+MSE		| LightGBM: 2.2864		Weighted Average: 2.3197
+MAE		| LightGBM: 0.60653		Weighted Average: 0.62711
+MAPE	| LightGBM: 0.261		Weighted Average: 0.29156
+WMAPE	| LightGBM: 0.69868		Weighted Average: 0.72238
+[+] Fold 2 from 2018-06-15 to 2018-06-23
+Huber	| LightGBM: 0.40024		Weighted Average: 0.40888
+MSE		| LightGBM: 2.9354		Weighted Average: 2.4389
+MAE		| LightGBM: 0.63597		Weighted Average: 0.65214
+MAPE	| LightGBM: 0.2715		Weighted Average: 0.31048
+WMAPE	| LightGBM: 0.64134		Weighted Average: 0.65765
+[+] Fold 3 from 2018-07-14 to 2018-07-21
+Huber	| LightGBM: 0.39187		Weighted Average: 0.39283
+MSE		| LightGBM: 4.7261		Weighted Average: 3.7773
+MAE		| LightGBM: 0.61846		Weighted Average: 0.62601
+MAPE	| LightGBM: 0.25517		Weighted Average: 0.29306
+WMAPE	| LightGBM: 0.67531		Weighted Average: 0.68356
+[+] Fold 4 from 2018-08-11 to 2018-08-18
+Huber	| LightGBM: 0.36431		Weighted Average: 0.36257
+MSE		| LightGBM: 2.9619		Weighted Average: 2.3485
+MAE		| LightGBM: 0.58449		Weighted Average: 0.58599
+MAPE	| LightGBM: 0.24568		Weighted Average: 0.27843
+WMAPE	| LightGBM: 0.6801		Weighted Average: 0.68185
+[+] Fold 5 from 2018-09-08 to 2018-09-15
+Huber	| LightGBM: 0.36905		Weighted Average: 0.3869
+MSE		| LightGBM: 2.7738		Weighted Average: 3.104
+MAE		| LightGBM: 0.58708		Weighted Average: 0.61293
+MAPE	| LightGBM: 0.24783		Weighted Average: 0.29027
+WMAPE	| LightGBM: 0.67628		Weighted Average: 0.70606
+[+] Fold 6 from 2018-10-07 to 2018-10-14
+Huber	| LightGBM: 0.32817		Weighted Average: 0.34125
+MSE		| LightGBM: 2.1571		Weighted Average: 1.9878
+MAE		| LightGBM: 0.54272		Weighted Average: 0.55729
+MAPE	| LightGBM: 0.25121		Weighted Average: 0.27755
+WMAPE	| LightGBM: 0.70326		Weighted Average: 0.72214
+[+] Fold 7 from 2018-11-04 to 2018-11-11
+Huber	| LightGBM: 0.32299		Weighted Average: 0.33408
+MSE		| LightGBM: 1.941		Weighted Average: 2.1904
+MAE		| LightGBM: 0.53614		Weighted Average: 0.54372
+MAPE	| LightGBM: 0.24923		Weighted Average: 0.26507
+WMAPE	| LightGBM: 0.69295		Weighted Average: 0.70274
+[+] Fold 8 from 2018-12-02 to 2018-12-09
+Huber	| LightGBM: 0.39801		Weighted Average: 0.45117
+MSE		| LightGBM: 3.8955		Weighted Average: 4.2363
+MAE		| LightGBM: 0.61926		Weighted Average: 0.67189
+MAPE	| LightGBM: 0.26522		Weighted Average: 0.30075
+WMAPE	| LightGBM: 0.68401		Weighted Average: 0.74214
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 110, Products in Normal group: 1248
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.13703 0.15647 
+ MSE: 5.1347 4.2972 
+ MAE: 0.23734 0.25973 
+ MAPE: 0.11089 0.13297 
+ wMAPE: 0.86342 0.94488
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.414 1.4906 
+ MSE: 20.523 19.883 
+ MAE: 1.7702 1.8551 
+ MAPE: 0.44834 0.52491 
+ wMAPE: 0.52055 0.54552
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.15826 0.1624 
+ MSE: 0.63723 0.60864 
+ MAE: 0.32084 0.31653 
+ MAPE: 0.18121 0.1848 
+ wMAPE: 0.90418 0.89203
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_WA7_Huber_0.31331
+Test Range: from 2016-02-02 to 2018-12-09
+[+] LGBM
+Overall Huber: 0.31331, Overall MSE: 3.0441, Overall MAE: 0.54017, Overall MAPE: 0.25078, Overall Weighted MAPE: 0.62413
+[+] WA
+Overall Huber: 0.3807, Overall MSE: 3.6824, Overall MAE: 0.61279, Overall MAPE: 0.29315, Overall Weighted MAPE: 0.70804
+[+] Parameters: {'nthread': 32, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.12, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 4096, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'wa_lag_7'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2016-02-02 to 2018-04-27
+Huber	| LightGBM: 0.29991		Weighted Average: 0.37641
+MSE		| LightGBM: 2.8072		Weighted Average: 3.6217
+MAE		| LightGBM: 0.52566		Weighted Average: 0.60882
+MAPE	| LightGBM: 0.24798		Weighted Average: 0.29336
+WMAPE	| LightGBM: 0.61525		Weighted Average: 0.71259
+[+] Fold 1 from 2016-02-02 to 2018-05-25
+Huber	| LightGBM: 0.31314		Weighted Average: 0.37614
+MSE		| LightGBM: 3.0452		Weighted Average: 3.5389
+MAE		| LightGBM: 0.54065		Weighted Average: 0.60843
+MAPE	| LightGBM: 0.25136		Weighted Average: 0.29293
+WMAPE	| LightGBM: 0.63271		Weighted Average: 0.71203
+[+] Fold 2 from 2016-02-02 to 2018-06-23
+Huber	| LightGBM: 0.31021		Weighted Average: 0.37906
+MSE		| LightGBM: 2.9151		Weighted Average: 3.5811
+MAE		| LightGBM: 0.53761		Weighted Average: 0.61181
+MAPE	| LightGBM: 0.25095		Weighted Average: 0.29333
+WMAPE	| LightGBM: 0.62267		Weighted Average: 0.7086
+[+] Fold 3 from 2016-02-02 to 2018-07-21
+Huber	| LightGBM: 0.31355		Weighted Average: 0.38195
+MSE		| LightGBM: 2.941		Weighted Average: 3.6051
+MAE		| LightGBM: 0.54111		Weighted Average: 0.61494
+MAPE	| LightGBM: 0.25154		Weighted Average: 0.29452
+WMAPE	| LightGBM: 0.62362		Weighted Average: 0.70871
+[+] Fold 4 from 2016-02-02 to 2018-08-18
+Huber	| LightGBM: 0.31353		Weighted Average: 0.38208
+MSE		| LightGBM: 3.0851		Weighted Average: 3.7847
+MAE		| LightGBM: 0.54091		Weighted Average: 0.61475
+MAPE	| LightGBM: 0.25145		Weighted Average: 0.29421
+WMAPE	| LightGBM: 0.62385		Weighted Average: 0.70901
+[+] Fold 5 from 2016-02-02 to 2018-09-15
+Huber	| LightGBM: 0.32035		Weighted Average: 0.38277
+MSE		| LightGBM: 3.2038		Weighted Average: 3.7645
+MAE		| LightGBM: 0.54829		Weighted Average: 0.61522
+MAPE	| LightGBM: 0.25279		Weighted Average: 0.2938
+WMAPE	| LightGBM: 0.63009		Weighted Average: 0.70701
+[+] Fold 6 from 2016-02-02 to 2018-10-14
+Huber	| LightGBM: 0.3241		Weighted Average: 0.38181
+MSE		| LightGBM: 3.2656		Weighted Average: 3.699
+MAE		| LightGBM: 0.5522		Weighted Average: 0.61377
+MAPE	| LightGBM: 0.25354		Weighted Average: 0.29315
+WMAPE	| LightGBM: 0.63542		Weighted Average: 0.70627
+[+] Fold 7 from 2016-02-02 to 2018-11-11
+Huber	| LightGBM: 0.32071		Weighted Average: 0.38035
+MSE		| LightGBM: 3.1369		Weighted Average: 3.6391
+MAE		| LightGBM: 0.54776		Weighted Average: 0.61158
+MAPE	| LightGBM: 0.25218		Weighted Average: 0.29209
+WMAPE	| LightGBM: 0.63178		Weighted Average: 0.70538
+[+] Fold 8 from 2016-02-02 to 2018-12-09
+Huber	| LightGBM: 0.30149		Weighted Average: 0.38362
+MSE		| LightGBM: 2.9224		Weighted Average: 3.8387
+MAE		| LightGBM: 0.52496		Weighted Average: 0.61423
+MAPE	| LightGBM: 0.24529		Weighted Average: 0.29146
+WMAPE	| LightGBM: 0.60278		Weighted Average: 0.70528
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 111, Products in Normal group: 1252
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.1711 0.20298 
+ MSE: 7.0534 6.7758 
+ MAE: 0.30053 0.33059 
+ MAPE: 0.13973 0.15781 
+ wMAPE: 0.80713 0.88786
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.1015 1.5096 
+ MSE: 17.788 25.905 
+ MAE: 1.4447 1.8661 
+ MAPE: 0.4028 0.50938 
+ wMAPE: 0.39271 0.50726
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.19684 0.21896 
+ MSE: 0.76453 0.83573 
+ MAE: 0.38745 0.41012 
+ MAPE: 0.20788 0.23 
+ wMAPE: 0.78681 0.83285
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 10K_WA7_NEWCV_Huber_0.32078
+Test Range: from 2018-04-20 to 2018-12-09
+[+] LGBM
+Overall Huber: 0.32078, Overall MSE: 2.5071, Overall MAE: 0.51655, Overall MAPE: 0.22581, Overall Weighted MAPE: 0.68638
+[+] WA
+Overall Huber: 0.39679, Overall MSE: 3.0806, Overall MAE: 0.62851, Overall MAPE: 0.33859, Overall Weighted MAPE: 0.83515
+[+] Parameters: {'nthread': 64, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.12, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 4096, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'wa_lag_7'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-20 to 2018-04-27
+Huber	| LightGBM: 0.29196		Weighted Average: 0.3824
+MSE		| LightGBM: 1.6758		Weighted Average: 2.3742
+MAE		| LightGBM: 0.48508		Weighted Average: 0.61094
+MAPE	| LightGBM: 0.22757		Weighted Average: 0.34807
+WMAPE	| LightGBM: 0.72663		Weighted Average: 0.91516
+[+] Fold 1 from 2018-05-18 to 2018-05-25
+Huber	| LightGBM: 0.32962		Weighted Average: 0.38988
+MSE		| LightGBM: 1.9937		Weighted Average: 2.2061
+MAE		| LightGBM: 0.52977		Weighted Average: 0.62728
+MAPE	| LightGBM: 0.22847		Weighted Average: 0.33322
+WMAPE	| LightGBM: 0.69985		Weighted Average: 0.82867
+[+] Fold 2 from 2018-06-15 to 2018-06-23
+Huber	| LightGBM: 0.34388		Weighted Average: 0.41901
+MSE		| LightGBM: 2.5275		Weighted Average: 2.6976
+MAE		| LightGBM: 0.5472		Weighted Average: 0.66861
+MAPE	| LightGBM: 0.23418		Weighted Average: 0.36489
+WMAPE	| LightGBM: 0.64294		Weighted Average: 0.7856
+[+] Fold 3 from 2018-07-14 to 2018-07-21
+Huber	| LightGBM: 0.34935		Weighted Average: 0.40113
+MSE		| LightGBM: 4.2132		Weighted Average: 3.764
+MAE		| LightGBM: 0.55209		Weighted Average: 0.63891
+MAPE	| LightGBM: 0.22824		Weighted Average: 0.33267
+WMAPE	| LightGBM: 0.67623		Weighted Average: 0.78258
+[+] Fold 4 from 2018-08-11 to 2018-08-18
+Huber	| LightGBM: 0.32778		Weighted Average: 0.38594
+MSE		| LightGBM: 2.6879		Weighted Average: 3.0995
+MAE		| LightGBM: 0.52605		Weighted Average: 0.61514
+MAPE	| LightGBM: 0.22081		Weighted Average: 0.32607
+WMAPE	| LightGBM: 0.68239		Weighted Average: 0.79796
+[+] Fold 5 from 2018-09-08 to 2018-09-15
+Huber	| LightGBM: 0.32414		Weighted Average: 0.40843
+MSE		| LightGBM: 2.4472		Weighted Average: 3.7849
+MAE		| LightGBM: 0.51623		Weighted Average: 0.64049
+MAPE	| LightGBM: 0.21827		Weighted Average: 0.34416
+WMAPE	| LightGBM: 0.6776		Weighted Average: 0.8407
+[+] Fold 6 from 2018-10-07 to 2018-10-14
+Huber	| LightGBM: 0.28966		Weighted Average: 0.35772
+MSE		| LightGBM: 1.904		Weighted Average: 2.1361
+MAE		| LightGBM: 0.47985		Weighted Average: 0.5815
+MAPE	| LightGBM: 0.22256		Weighted Average: 0.32596
+WMAPE	| LightGBM: 0.70449		Weighted Average: 0.85372
+[+] Fold 7 from 2018-11-04 to 2018-11-11
+Huber	| LightGBM: 0.28427		Weighted Average: 0.34643
+MSE		| LightGBM: 1.7082		Weighted Average: 2.4631
+MAE		| LightGBM: 0.47277		Weighted Average: 0.56436
+MAPE	| LightGBM: 0.22027		Weighted Average: 0.31158
+WMAPE	| LightGBM: 0.69433		Weighted Average: 0.82884
+[+] Fold 8 from 2018-12-02 to 2018-12-09
+Huber	| LightGBM: 0.34622		Weighted Average: 0.47997
+MSE		| LightGBM: 3.3982		Weighted Average: 5.1877
+MAE		| LightGBM: 0.53977		Weighted Average: 0.70924
+MAPE	| LightGBM: 0.23194		Weighted Average: 0.36084
+WMAPE	| LightGBM: 0.68674		Weighted Average: 0.90235
+[+] Product Group Metrics
+Products in OOS group: 508, products in Promo group: 111, Products in Normal group: 1252
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.12564 0.21079 
+ MSE: 4.6891 5.533 
+ MAE: 0.21722 0.32281 
+ MAPE: 0.10119 0.19905 
+ wMAPE: 0.87 1.2929
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.259 1.6106 
+ MSE: 18.361 26.254 
+ MAE: 1.5783 1.9845 
+ MAPE: 0.40159 0.66986 
+ wMAPE: 0.52138 0.65558
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.14309 0.17027 
+ MSE: 0.57595 0.6336 
+ MAE: 0.2907 0.33377 
+ MAPE: 0.16452 0.21277 
+ wMAPE: 0.90595 1.0402
+[----------------------------------------------------------------------------------------------------------]
+[+] Model ID: 40K_WA7_NEWCV_Huber_0.32224
+Test Range: from 2018-04-18 to 2018-12-09
+[+] LGBM
+Overall Huber: 0.32224, Overall MSE: 2.4317, Overall MAE: 0.51831, Overall MAPE: 0.23103, Overall Weighted MAPE: 0.69616
+[+] WA
+Overall Huber: 0.40076, Overall MSE: 2.9908, Overall MAE: 0.63353, Overall MAPE: 0.34819, Overall Weighted MAPE: 0.85091
+[+] Parameters: {'nthread': 64, 'boosting_type': 'gbdt', 'objective': 'huber', 'metric': 'huber', 'learning_rate': 0.15, 'max_depth': -1, 'min_data_in_leaf': 5, 'num_leaves': 128, 'feature_fraction': 0.7, 'subsample': 1, 'subsample_freq': 10, 'max_bin': 4096, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'verbose': -1}
+[+] Features: ['month' 'weekday' 'dayofmonth' 'weekofyear' 'dayofyear' 'holiday_nl'
+ 'holiday_be' 'lag_7' 'lag_7_min' 'lag_7_max' 'lag_7_mean' 'lag_7_median'
+ 'lag_7_sum' 'lag_7_var' 'lag_8' 'lag_8_min' 'lag_8_max' 'lag_8_mean'
+ 'lag_8_median' 'lag_8_sum' 'lag_8_var' 'lag_14' 'lag_14_min' 'lag_14_max'
+ 'lag_14_mean' 'lag_14_median' 'lag_14_sum' 'lag_14_var' 'wa_lag_7'
+ 'product_type_id' 'product_group_id' 'subproduct_type_id'
+ 'actual_full_mean' 'actual_full_median' 'actual_full_var'
+ 'actual_weekday_max' 'actual_weekday_median' 'actual_weekday_mean'
+ 'full_mean_lag_7_median_prod' 'full_mean_lag_7_mean_prod'
+ 'full_mean_lag_7_max_prod' 'weekday_mean_lag_7_median_prod'
+ 'weekday_mean_lag_7_max_prod' 'full_mean_lag_7_prod'
+ 'weekday_mean_lag_7_prod' 'full_mean_lag_wa_prod'
+ 'weekday_mean_lag_wa_prod']
+[+] Fold 0 from 2018-04-18 to 2018-04-25
+Huber	| LightGBM: 0.33777		Weighted Average: 0.40496
+MSE		| LightGBM: 2.312		Weighted Average: 2.6412
+MAE		| LightGBM: 0.5353		Weighted Average: 0.63609
+MAPE	| LightGBM: 0.27425		Weighted Average: 0.37967
+WMAPE	| LightGBM: 0.81908		Weighted Average: 0.97331
+[+] Fold 1 from 2018-05-17 to 2018-05-24
+Huber	| LightGBM: 0.31611		Weighted Average: 0.38797
+MSE		| LightGBM: 1.9464		Weighted Average: 2.2633
+MAE		| LightGBM: 0.51433		Weighted Average: 0.62455
+MAPE	| LightGBM: 0.22614		Weighted Average: 0.33839
+WMAPE	| LightGBM: 0.69329		Weighted Average: 0.84185
+[+] Fold 2 from 2018-06-14 to 2018-06-21
+Huber	| LightGBM: 0.34718		Weighted Average: 0.42886
+MSE		| LightGBM: 2.5155		Weighted Average: 2.8945
+MAE		| LightGBM: 0.5486		Weighted Average: 0.67995
+MAPE	| LightGBM: 0.23166		Weighted Average: 0.37432
+WMAPE	| LightGBM: 0.64805		Weighted Average: 0.80322
+[+] Fold 3 from 2018-07-13 to 2018-07-20
+Huber	| LightGBM: 0.34718		Weighted Average: 0.39973
+MSE		| LightGBM: 3.5211		Weighted Average: 3.289
+MAE		| LightGBM: 0.5527		Weighted Average: 0.63812
+MAPE	| LightGBM: 0.23422		Weighted Average: 0.33888
+WMAPE	| LightGBM: 0.67255		Weighted Average: 0.77649
+[+] Fold 4 from 2018-08-10 to 2018-08-17
+Huber	| LightGBM: 0.31646		Weighted Average: 0.37795
+MSE		| LightGBM: 2.1706		Weighted Average: 2.5558
+MAE		| LightGBM: 0.51563		Weighted Average: 0.60929
+MAPE	| LightGBM: 0.22188		Weighted Average: 0.332
+WMAPE	| LightGBM: 0.68754		Weighted Average: 0.81243
+[+] Fold 5 from 2018-09-08 to 2018-09-15
+Huber	| LightGBM: 0.3198		Weighted Average: 0.41223
+MSE		| LightGBM: 2.3065		Weighted Average: 3.4659
+MAE		| LightGBM: 0.51211		Weighted Average: 0.64619
+MAPE	| LightGBM: 0.21846		Weighted Average: 0.35251
+WMAPE	| LightGBM: 0.67796		Weighted Average: 0.85545
+[+] Fold 6 from 2018-10-06 to 2018-10-13
+Huber	| LightGBM: 0.28296		Weighted Average: 0.36411
+MSE		| LightGBM: 1.7473		Weighted Average: 2.1496
+MAE		| LightGBM: 0.47171		Weighted Average: 0.58848
+MAPE	| LightGBM: 0.22065		Weighted Average: 0.33593
+WMAPE	| LightGBM: 0.70688		Weighted Average: 0.88186
+[+] Fold 7 from 2018-11-04 to 2018-11-11
+Huber	| LightGBM: 0.29015		Weighted Average: 0.35519
+MSE		| LightGBM: 1.9376		Weighted Average: 2.449
+MAE		| LightGBM: 0.4781		Weighted Average: 0.57366
+MAPE	| LightGBM: 0.22139		Weighted Average: 0.31892
+WMAPE	| LightGBM: 0.70307		Weighted Average: 0.84359
+[+] Fold 8 from 2018-12-02 to 2018-12-09
+Huber	| LightGBM: 0.34278		Weighted Average: 0.47583
+MSE		| LightGBM: 3.4255		Weighted Average: 5.2007
+MAE		| LightGBM: 0.53661		Weighted Average: 0.70549
+MAPE	| LightGBM: 0.23109		Weighted Average: 0.36341
+WMAPE	| LightGBM: 0.68468		Weighted Average: 0.90016
+[+] Product Group Metrics
+Products in OOS group: 1139, products in Promo group: 235, Products in Normal group: 2895
+OOS product types overall metrics [LGBM, WA] 
+ Huber: 0.10201 0.17109 
+ MSE: 2.1857 3.2118 
+ MAE: 0.19404 0.28386 
+ MAPE: 0.10225 0.18733 
+ wMAPE: 0.94869 1.3879
+Promo product types overall metrics [LGBM, WA] 
+ Huber: 1.0773 1.3375 
+ MSE: 15.786 19.864 
+ MAE: 1.3777 1.6981 
+ MAPE: 0.39378 0.65377 
+ wMAPE: 0.5307 0.65412
+Normal product types overall metrics [LGBM, WA] 
+ Huber: 0.14455 0.17542 
+ MSE: 0.58096 0.66982 
+ MAE: 0.29267 0.33862 
+ MAPE: 0.16767 0.21812 
+ wMAPE: 0.91586 1.0597

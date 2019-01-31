@@ -60,34 +60,34 @@ select
   date,
   product_id,
   actual,
-  (0.7 * actual_past_day1 + 0.6666666666666666 * actual_past_day2 + 0.6333333333333333 * actual_past_day3 + 
-  0.6 * actual_past_day4 + 0.5666666666666667 * actual_past_day5 + 0.5333333333333333 * actual_past_day6 + 
-  0.49999999999999994 * actual_past_day7 + 0.35000000000000003 * actual_past_day8 + 0.3333333333333333 * actual_past_day9 + 
+  (0.7 * actual_past_day1 + 0.6666666666666666 * actual_past_day2 + 0.6333333333333333 * actual_past_day3 +
+  0.6 * actual_past_day4 + 0.5666666666666667 * actual_past_day5 + 0.5333333333333333 * actual_past_day6 +
+  0.49999999999999994 * actual_past_day7 + 0.35000000000000003 * actual_past_day8 + 0.3333333333333333 * actual_past_day9 +
   0.31666666666666665 * actual_past_day10 + 0.3 * actual_past_day11 + 0.2833333333333333 * actual_past_day12 +
-  0.26666666666666666 * actual_past_day13 + 0.24999999999999997 * actual_past_day14 + 0.11666666666666668 * actual_past_day15 + 
-  0.11111111111111112 * actual_past_day16 + 0.10555555555555557 * actual_past_day17 + 0.1 * actual_past_day18 + 
+  0.26666666666666666 * actual_past_day13 + 0.24999999999999997 * actual_past_day14 + 0.11666666666666668 * actual_past_day15 +
+  0.11111111111111112 * actual_past_day16 + 0.10555555555555557 * actual_past_day17 + 0.1 * actual_past_day18 +
   0.09444444444444444 * actual_past_day19 + 0.08888888888888889 * actual_past_day20 + 0.08333333333333333 * actual_past_day21) / 7 as wa
 from
   actuals_lagged a
 )
 
-select 
+select
   a.product_id,
   a.date,
   -- This clause uses the last known WA value when the current WA value is NULL (due to out of stock)
   FIRST_VALUE(wa IGNORE NULLS) OVER (PARTITION BY a.product_id ORDER BY a.date DESC ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) as wa
-from 
+from
   actuals a
   left join forecast f on f.date = a.date and f.product_id = a.product_id
 WHERE
   EXISTS (
-    SELECT 
-      'x' 
-    FROM 
-      `master.product` p 
+    SELECT
+      'x'
+    FROM
+      `master.product` p
     WHERE
       p.product_id = a.product_id
-      -- PROMO PTs provided by Arthur 
+      -- PROMO PTs provided by Arthur
       -- and p.product_type_id in (2452, 2458, 2096, 2090, 2048, 2250, 2562, 9504)
       -- and a.product_id in (785998)
   )

@@ -1,11 +1,10 @@
 from datetime import datetime
 
 # General settings
-RUNTAG = 'LGBM_TEST'
+RUNTAG = '40K_WA7_NEWCV'
+COMPUTE_SHAP = True
 
-COMPUTE_SHAP = False
-
-# GCS settings
+# GCS folder structure settings
 PROJECT = 'coolblue-bi-platform-dev'
 BUCKET = 'coolblue-ds-demand-forecast-dev'
 DATA_DIR = 'marnix/lightgbm/data'
@@ -16,26 +15,25 @@ PLOTS_DIR = 'marnix/lightgbm/plots'
 CODE_DIR = 'marnix/lightgbm/code'
 
 # Feature-construction settings
-LAGS = [7, 8, 9, 14, 21]
-NUM_FOLDS = 5
+LAGS = [7, 8, 14]
+NUM_FOLDS = 10
 
-# Model settings
-
+# LightGBM parameter settings
 # Parameters quite randomly chosen for now, should be optimized at some point
 PARAMS = {
-    'nthread': -1,
+    'nthread': 64, # Check if 32 is faster in prod (Real cores / 2) see https://lightgbm.readthedocs.io/en/latest/Parameters.html
     'boosting_type': 'gbdt',
-    'objective': 'huber',  # set to 'None' if custom objective is supplied in the lgb.train call below
-    'metric': 'huber',  # set to 'None' if custom metric is supplied in the lgb.train call below
-    'learning_rate': 0.1,
-    'max_depth': -1,
-    'num_leaves': 32,
-    'feature_fraction': 1,
-    'subsample': 1,
+    'objective': 'huber', # Set to 'None' if custom objective is given in train call
+    'metric': 'huber', # Set to 'None' if custom metric is given in train call
+    'learning_rate': 0.15, # Train ~1000 rounds
+    'max_depth': -1, # Unrestricted, increased from 24
+    'min_data_in_leaf': 5, # Decreased from 20
+    'num_leaves': 128, # Increased from 84
+    'feature_fraction': 0.7, # Sample 70% of featutes
+    'subsample': 1, # Was 0.9, use all data
     'subsample_freq': 0,
-    # 'min_data_in_leaf': 25,
-    # 'min_split_gain': 0.1,
-    'reg_alpha': 0,
-    'reg_lambda': 0,
+    'max_bin': 4096, # Increased from 255
+    'reg_alpha': 0.0, # No reg
+    'reg_lambda': 0.0,
     'verbose': -1
 }
