@@ -56,25 +56,25 @@ To inspect behavior on `product_id` level, we plot in-sample fits and out-of-fol
 ###### FIGURE 3: Seasonal products and out-of-stock in between seasons [fans]
 
 ![individual plots 1](img/individual_plots1.png)
-###### FIGURE 4: LightGBM picks up long term cycle, WA fails to capture any pattern [HDMI cable, top] WA fails to readjust after peak sales [calculator, bottom]
+###### FIGURE 4: LightGBM picks up long term cycle, WA fails to capture any pattern [top] WA fails to readjust after peak sales [bottom]
 
 ![individual plots 2](img/individual_plots2.png)
-###### FIGURE 5: WA fails to readjust after peak sales [powerbank, top] [laptop sleeve, bottom] 
+###### FIGURE 5: WA fails to readjust after peak sales 
 
 ![individual plots 3](img/individual_plots3.png)
-###### FIGURE 6: Long interval intermittent demand [waterfilter, top] LightGBM captures long term growth pattern washing machine table, bottom]
+###### FIGURE 6: Long interval intermittent demand [top] LightGBM captures long term growth pattern [bottom]
 
 ![individual plots 5](img/individual_plots5.png)
-###### FIGURE 7: Short interval intermittent demand  [Xbox game, top] [? OOS, bottom]
+###### FIGURE 7: Short interval intermittent demand
 
 ![individual plots 7](img/individual_plots7.png)
-###### FIGURE 8: Short interval intermittent demand [smart thermo, top] long interval intermittent demand [ZenPad sleeve, bottom]
+###### FIGURE 8: Short interval intermittent demand [top] long interval intermittent demand [bottom]
 
 ![individual plots 4](img/individual_plots4.png)
-###### FIGURE 9: Strong deviations from stable long term behavior and volatility are hard to capture without features [washing machine top] [phone car-mount, bottom]
+###### FIGURE 9: Strong deviations from stable long term behavior and volatility are hard to capture without features
 
 ![individual plots 6](img/individual_plots6.png)
-###### FIGURE 10: Strong deviations from stable long term behavior and volatility are hard to capture without features [Google chromecast v3, top] [Beats headphones, bottom]
+###### FIGURE 10: Strong deviations from stable long term behavior and volatility are hard to capture without features
 
 ---
 
